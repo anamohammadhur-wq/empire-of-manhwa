@@ -304,3 +304,107 @@ window.location.href = "#reader";
 showNotification("📚 تم فتح " + name);
 
 }
+
+
+/* تسجيل الدخول */
+
+function loginUser(){
+
+let username =
+document.getElementById("login-username").value;
+
+let password =
+document.getElementById("login-password").value;
+
+if(username && password){
+
+localStorage.setItem(
+"username",
+username
+);
+
+window.location.href =
+"index.html";
+
+}else{
+
+alert("❌ املأ جميع الحقول");
+
+}
+
+}
+
+/* البروفايل */
+
+const profilePageName =
+document.getElementById(
+"profilePageName"
+);
+
+if(profilePageName){
+
+profilePageName.innerText =
+localStorage.getItem("username")
+|| "زائر";
+
+document.getElementById(
+"profileCoins"
+).innerText =
+"🪙 " + coins;
+
+}
+
+/* المفضلة */
+
+const favoritesContainer =
+document.getElementById(
+"favorites-container"
+);
+
+if(favoritesContainer){
+
+favorites.forEach(item => {
+
+favoritesContainer.innerHTML += `
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>${item}</h3>
+
+<button onclick="readManhwa('${item}')">
+📖 قراءة
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+/* القراءة */
+
+function readManhwa(name){
+
+if(name === "Solo Leveling"){
+
+window.location.href =
+"solo.html";
+
+}else if(name === "Nano Machine"){
+
+window.location.href =
+"nano.html";
+
+}else{
+
+alert("📚 قريبًا");
+
+}
+
+}
