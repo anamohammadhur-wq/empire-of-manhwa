@@ -6,398 +6,398 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>☠️ إمبراطورية المانهوا</title>
+<title>امبراطورية المانهو</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+body{
+
+margin:0;
+padding:0;
+background:#050505;
+color:white;
+font-family:Tahoma;
+direction:rtl;
+
+}
+
+/* النافبار */
+
+.navbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#0d0d0d;
+border-bottom:2px solid #00ff99;
+position:sticky;
+top:0;
+z-index:999;
+
+}
+
+.logo{
+
+font-size:35px;
+font-weight:bold;
+color:#00ff99;
+text-shadow:0 0 15px #00ff99;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin:15px;
+font-size:18px;
+font-weight:bold;
+transition:0.3s;
+
+}
+
+nav a:hover{
+
+color:#00ff99;
+
+}
+
+.coins-box{
+
+background:#00ff99;
+color:black;
+padding:12px 20px;
+border-radius:15px;
+font-weight:bold;
+font-size:20px;
+
+}
+
+/* الواجهة */
+
+.hero{
+
+text-align:center;
+padding:120px 20px;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.7),
+rgba(0,0,0,0.8)
+),
+
+url("https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.hero h1{
+
+font-size:80px;
+color:#00ff99;
+text-shadow:0 0 25px #00ff99;
+
+}
+
+.hero p{
+
+font-size:30px;
+margin-bottom:40px;
+
+}
+
+/* الأزرار */
+
+.hero-buttons button{
+
+padding:18px 35px;
+margin:10px;
+border:none;
+border-radius:15px;
+background:#00ff99;
+color:black;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+.hero-buttons button:hover{
+
+transform:scale(1.08);
+box-shadow:0 0 20px #00ff99;
+
+}
+
+/* الأقسام */
+
+.section{
+
+padding:70px 40px;
+
+}
+
+.section h2{
+
+font-size:40px;
+margin-bottom:30px;
+color:#00ff99;
+
+}
+
+/* البطاقات */
+
+.cards{
+
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+.card{
+
+background:#111;
+border-radius:20px;
+overflow:hidden;
+width:300px;
+transition:0.3s;
+border:2px solid #00ff99;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+box-shadow:0 0 25px #00ff99;
+
+}
+
+.card img{
+
+width:100%;
+height:400px;
+object-fit:cover;
+
+}
+
+.card h3{
+
+padding:15px;
+font-size:25px;
+
+}
+
+.card button{
+
+width:90%;
+margin:15px;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#00ff99;
+color:black;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+.card button:hover{
+
+box-shadow:0 0 20px #00ff99;
+
+}
+
+footer{
+
+text-align:center;
+padding:30px;
+background:#0d0d0d;
+margin-top:50px;
+font-size:20px;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- شاشة التحميل -->
-
-<div id="loader">
-
-<h1>
-☠️ إمبراطورية المانهوا
-</h1>
-
-</div>
-
-<!-- Sidebar -->
-
-<div class="sidebar">
-
-<a href="#home">🏠</a>
-<a href="#latest">🔥</a>
-<a href="#store">🛒</a>
-<a href="#comments">💬</a>
-<a href="#profile">👑</a>
-
-</div>
-
-<!-- زر الصعود -->
-
-<button id="topBtn" onclick="scrollToTop()">
-⬆️
-</button>
-
-<!-- الخلفية -->
-
-<div class="particles"></div>
-
-<!-- الهيدر -->
-
-<header>
+<header class="navbar">
 
 <div class="logo">
-☠️ إمبراطورية المانهوا
+💀 امبراطورية المانهو
 </div>
 
 <nav>
 
-<a href="#home">الرئيسية</a>
-<a href="#latest">الأحدث</a>
-<a href="#store">المتجر</a>
-<a href="#comments">التعليقات</a>
-<a href="#profile">البروفايل</a>
+<a href="#">الرئيسية</a>
+<a href="#">الأحدث</a>
+<a href="#">المتجر</a>
+<a href="#">البروفايل</a>
 
 </nav>
 
 <div class="coins-box">
 
-🪙 <span id="coins">3000</span>
+<span id="coins">
+3000
+</span>
+
+🪙
 
 </div>
 
 </header>
 
-<!-- الشريط العلوي -->
-
-<div class="top-bar">
-
-<input
-type="text"
-id="search"
-placeholder="ابحث عن مانهوا..."
-onkeyup="searchManhwa()"
->
-
-<div class="user-profile">
-
-👑 <span id="username">زائر</span>
-
-<button onclick="login()">
-تسجيل دخول
-</button>
-
-</div>
-
-</div>
-
-<!-- الواجهة -->
-
-<section class="hero" id="home">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
+<section class="hero">
 
 <h1>
-🔥 عالم المانهوا الأسطوري
+🔥 عالم المانهو الأسطوري
 </h1>
 
 <p>
-أفضل موقع مانهوا عربي في المجرة ☠️
+أفضل موقع مانهوا عربي
 </p>
 
 <div class="hero-buttons">
-
-<button onclick="dailyReward()">
-🎁 مكافأة يومية
-</button>
-
-<button onclick="toggleMusic()">
-🎵 موسيقى
-</button>
 
 <button onclick="spinWheel()">
 🎡 عجلة الحظ
 </button>
 
-</div>
+<button onclick="dailyReward()">
+🎁 مكافأة يومية
+</button>
+
+<button onclick="login()">
+👑 تسجيل دخول
+</button>
 
 </div>
 
 </section>
 
-<!-- أحدث الفصول -->
-
-<section class="section" id="latest">
+<section class="section">
 
 <h2>
-🔥 أحدث الفصول
+🔥 أحدث المانهوا
 </h2>
 
 <div class="cards">
 
 <div class="card">
 
-<img src="https://picsum.photos/400/500?1">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070">
 
-<div class="card-content">
-
-<h3>Solo Leveling</h3>
-
-<p>
-الفصل 201
-</p>
-
-<div class="likes">
-❤️ 25K
-</div>
-
-<div class="card-buttons">
+<h3>
+Solo Leveling
+</h3>
 
 <button onclick="readManhwa('Solo Leveling')">
 📖 قراءة
 </button>
 
-<button onclick="addFavorite('Solo Leveling')">
-❤️
-</button>
-
-</div>
-
-<div class="views">
-👁️ 2.5M مشاهدة
-</div>
-
-</div>
-
 </div>
 
 <div class="card">
 
-<img src="https://picsum.photos/400/500?2">
+<img src="https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=1974">
 
-<div class="card-content">
-
-<h3>Nano Machine</h3>
-
-<p>
-الفصل 180
-</p>
-
-<div class="likes">
-❤️ 18K
-</div>
-
-<div class="card-buttons">
+<h3>
+Nano Machine
+</h3>
 
 <button onclick="readManhwa('Nano Machine')">
 📖 قراءة
 </button>
 
-<button onclick="addFavorite('Nano Machine')">
-❤️
-</button>
-
-</div>
-
-<div class="views">
-👁️ 1.8M مشاهدة
-</div>
-
-</div>
-
 </div>
 
 <div class="card">
 
-<img src="https://picsum.photos/400/500?3">
+<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=2070">
 
-<div class="card-content">
+<h3>
+Omniscient Reader
+</h3>
 
-<h3>TBATE</h3>
-
-<p>
-الفصل 170
-</p>
-
-<div class="likes">
-❤️ 30K
-</div>
-
-<div class="card-buttons">
-
-<button onclick="readManhwa('TBATE')">
+<button onclick="readManhwa('Omniscient Reader')">
 📖 قراءة
 </button>
 
-<button onclick="addFavorite('TBATE')">
-❤️
-</button>
-
-</div>
-
-<div class="views">
-👁️ 3M مشاهدة
-</div>
-
-</div>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- المتجر -->
+<footer>
 
-<section class="section" id="store">
+💀 امبراطورية المانهو 2026
 
-<h2>
-🛒 متجر المظاهر
-</h2>
+</footer>
 
-<div class="cards">
+<script>
 
-<div class="card">
+let coins = 3000;
 
-<div class="card-content">
+function updateCoins(){
 
-<h3>
-🌌 Neon Theme
-</h3>
+document.getElementById("coins").innerText = coins;
 
-<p>
-1000 🪙
-</p>
+}
 
-<button onclick="activateTheme('neon')">
-شراء
-</button>
+updateCoins();
 
-</div>
+function spinWheel(){
 
-</div>
+let reward = Math.floor(Math.random() * 1000);
 
-<div class="card">
+coins += reward;
 
-<div class="card-content">
+updateCoins();
 
-<h3>
-🩸 Blood Theme
-</h3>
+alert("🎡 ربحت " + reward + " عملة");
 
-<p>
-1500 🪙
-</p>
+}
 
-<button onclick="activateTheme('blood')">
-شراء
-</button>
+function dailyReward(){
 
-</div>
+coins += 500;
 
-</div>
+updateCoins();
 
-</div>
+alert("🎁 حصلت على 500 عملة");
 
-</section>
+}
 
-<!-- البروفايل -->
+function login(){
 
-<section class="section" id="profile">
+let username = prompt("ادخل اسمك");
 
-<h2>
-👑 البروفايل
-</h2>
+if(username){
 
-<div class="profile-card">
+alert("👑 أهلاً " + username);
 
-<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+}
 
-<h3 id="profile-name">
-ملك المانهوا
-</h3>
+}
 
-<p>
-LVL 99 ☠️
-</p>
+function readManhwa(name){
 
-<p>
-XP: 999999
-</p>
+alert("📖 جاري قراءة " + name);
 
-<div class="level-bar">
+}
 
-<div class="level-fill"></div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- التعليقات -->
-
-<section class="section" id="comments">
-
-<h2>
-💬 التعليقات
-</h2>
-
-<div class="comment-box">
-
-<input
-type="text"
-id="comment-input"
-placeholder="اكتب تعليق..."
->
-
-<button onclick="addComment()">
-إرسال
-</button>
-
-</div>
-
-<div id="comments-container">
-
-</div>
-
-</section>
-
-<!-- القارئ -->
-
-<section class="section" id="reader">
-
-<h2 id="reader-title">
-📖 اختر مانهوا للقراءة
-</h2>
-
-<div class="reader-images">
-
-<img src="https://picsum.photos/800/1200?10">
-
-<img src="https://picsum.photos/800/1200?11">
-
-</div>
-
-</section>
-
-<!-- إشعار -->
-
-<div id="notification"></div>
-
-<script src="app.js"></script>
+</script>
 
 </body>
-
-</html>
-</html>
-
 </html>
