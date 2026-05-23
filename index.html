@@ -18,26 +18,11 @@ background:#050505;
 color:white;
 font-family:Tahoma;
 direction:rtl;
-
-animation:fadeIn 1s;
-
-}
-
-@keyframes fadeIn{
-
-from{
-opacity:0;
-transform:translateY(20px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
+scroll-behavior:smooth;
 
 }
 
-/* النافبار */
+/* شريط علوي */
 
 .navbar{
 
@@ -69,7 +54,6 @@ text-decoration:none;
 margin:15px;
 font-size:18px;
 font-weight:bold;
-transition:0.3s;
 
 }
 
@@ -86,7 +70,6 @@ color:black;
 padding:12px 20px;
 border-radius:15px;
 font-weight:bold;
-font-size:20px;
 
 }
 
@@ -108,7 +91,6 @@ border-radius:15px;
 background:#111;
 color:white;
 font-size:18px;
-outline:none;
 border:2px solid #00ff99;
 
 }
@@ -144,7 +126,6 @@ text-shadow:0 0 25px #00ff99;
 .hero p{
 
 font-size:30px;
-margin-bottom:40px;
 
 }
 
@@ -161,14 +142,12 @@ color:black;
 font-size:20px;
 font-weight:bold;
 cursor:pointer;
-transition:0.3s;
 
 }
 
 .hero-buttons button:hover{
 
-transform:scale(1.08);
-box-shadow:0 0 20px #00ff99;
+transform:scale(1.07);
 
 }
 
@@ -183,7 +162,6 @@ padding:70px 40px;
 .section h2{
 
 font-size:40px;
-margin-bottom:30px;
 color:#00ff99;
 
 }
@@ -205,8 +183,8 @@ background:#111;
 border-radius:20px;
 overflow:hidden;
 width:300px;
-transition:0.3s;
 border:2px solid #00ff99;
+transition:0.3s;
 
 }
 
@@ -225,17 +203,21 @@ object-fit:cover;
 
 }
 
-.card h3{
+.card-content{
 
 padding:15px;
+
+}
+
+.card h3{
+
 font-size:25px;
 
 }
 
 .card button{
 
-width:90%;
-margin:15px;
+width:100%;
 padding:15px;
 border:none;
 border-radius:12px;
@@ -247,13 +229,18 @@ cursor:pointer;
 
 }
 
-.card button:hover{
+/* معلومات */
 
-box-shadow:0 0 20px #00ff99;
+.info{
+
+display:flex;
+justify-content:space-between;
+margin-top:10px;
+font-size:18px;
 
 }
 
-/* الإشعارات */
+/* إشعارات */
 
 .notification{
 
@@ -270,7 +257,23 @@ z-index:9999;
 
 }
 
-/* الفوتر */
+/* زر الأعلى */
+
+.topBtn{
+
+position:fixed;
+bottom:20px;
+right:20px;
+background:#00ff99;
+color:black;
+border:none;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+cursor:pointer;
+display:none;
+
+}
 
 footer{
 
@@ -278,7 +281,6 @@ text-align:center;
 padding:30px;
 background:#0d0d0d;
 margin-top:50px;
-font-size:20px;
 
 }
 
@@ -288,32 +290,44 @@ font-size:20px;
 
 <body>
 
-<div class="notification" id="notification">
+<div class="notification"
+id="notification">
+
 تم التنفيذ
+
 </div>
+
+<button class="topBtn"
+id="topBtn"
+onclick="scrollToTop()">
+
+⬆️
+
+</button>
 
 <header class="navbar">
 
 <div class="logo">
+
 💀 امبراطورية المانهو
+
 </div>
 
 <nav>
 
 <a href="#">الرئيسية</a>
 <a href="#">الأحدث</a>
-<a href="#">المتجر</a>
+<a href="#">الأكثر مشاهدة</a>
 <a href="#">البروفايل</a>
 
 </nav>
 
 <div class="coins-box">
 
+🪙
 <span id="coins">
 3000
 </span>
-
-🪙
 
 </div>
 
@@ -332,25 +346,35 @@ onkeyup="searchManhwa(this.value)"
 <section class="hero">
 
 <h1>
+
 🔥 عالم المانهو الأسطوري
+
 </h1>
 
 <p>
-أفضل موقع مانهوا عربي
+
+أفضل موقع مانهوا عربي في المجرة ☠️
+
 </p>
 
 <div class="hero-buttons">
 
 <button onclick="spinWheel()">
+
 🎡 عجلة الحظ
+
 </button>
 
 <button onclick="dailyReward()">
+
 🎁 مكافأة يومية
+
 </button>
 
 <button onclick="login()">
+
 👑 تسجيل دخول
+
 </button>
 
 </div>
@@ -360,14 +384,18 @@ onkeyup="searchManhwa(this.value)"
 <section class="section">
 
 <h2>
+
 🔥 أحدث المانهوا
+
 </h2>
 
-<div class="cards" id="cardsContainer">
+<div class="cards">
 
 <div class="card">
 
 <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070">
+
+<div class="card-content">
 
 <h3>
 Solo Leveling
@@ -377,11 +405,27 @@ Solo Leveling
 📖 قراءة
 </button>
 
+<div class="info">
+
+<span onclick="likeManhwa()">
+❤️ 120
+</span>
+
+<span>
+👁️ 15K
+</span>
+
+</div>
+
+</div>
+
 </div>
 
 <div class="card">
 
 <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?q=80&w=1974">
+
+<div class="card-content">
 
 <h3>
 Nano Machine
@@ -391,59 +435,19 @@ Nano Machine
 📖 قراءة
 </button>
 
-</div>
+<div class="info">
 
-<div class="card">
+<span onclick="likeManhwa()">
+❤️ 98
+</span>
 
-<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=2070">
-
-<h3>
-Omniscient Reader
-</h3>
-
-<button onclick="readManhwa('Omniscient Reader')">
-📖 قراءة
-</button>
+<span>
+👁️ 11K
+</span>
 
 </div>
 
 </div>
-
-</section>
-
-<section class="section">
-
-<h2>
-⭐ الأكثر مشاهدة
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070">
-
-<h3>
-The Beginning After The End
-</h3>
-
-<button onclick="readManhwa('TBATE')">
-🔥 مشاهدة
-</button>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2070">
-
-<h3>
-Return Of The Mount Hua Sect
-</h3>
-
-<button onclick="readManhwa('Mount Hua')">
-🔥 مشاهدة
-</button>
 
 </div>
 
@@ -453,45 +457,59 @@ Return Of The Mount Hua Sect
 
 <footer>
 
-💀 امبراطورية المانهو 2026
+👑 LVL 99 | امبراطورية المانهو 2026
 
 </footer>
 
 <script>
 
-let coins = localStorage.getItem("coins") || 3000;
+let coins =
+localStorage.getItem("coins")
+|| 3000;
 
 function updateCoins(){
 
-document.getElementById("coins").innerText = coins;
+document.getElementById("coins")
+.innerText = coins;
 
-localStorage.setItem("coins", coins);
+localStorage.setItem(
+"coins",
+coins
+);
 
 }
 
 updateCoins();
 
+/* إشعار */
+
 function showNotification(text){
 
 let notification =
-document.getElementById("notification");
+document.getElementById(
+"notification"
+);
 
 notification.innerText = text;
 
-notification.style.display = "block";
+notification.style.display =
+"block";
 
 setTimeout(()=>{
 
-notification.style.display = "none";
+notification.style.display =
+"none";
 
 },2000);
 
 }
 
+/* عجلة الحظ */
+
 function spinWheel(){
 
 let reward =
-Math.floor(Math.random() * 1000);
+Math.floor(Math.random()*1000);
 
 coins =
 parseInt(coins) + reward;
@@ -503,6 +521,8 @@ showNotification(
 );
 
 }
+
+/* مكافأة */
 
 function dailyReward(){
 
@@ -517,12 +537,19 @@ showNotification(
 
 }
 
+/* تسجيل دخول */
+
 function login(){
 
 let username =
 prompt("ادخل اسمك");
 
 if(username){
+
+localStorage.setItem(
+"username",
+username
+);
 
 showNotification(
 "👑 أهلاً " + username
@@ -532,6 +559,8 @@ showNotification(
 
 }
 
+/* قراءة */
+
 function readManhwa(name){
 
 showNotification(
@@ -539,6 +568,18 @@ showNotification(
 );
 
 }
+
+/* لايك */
+
+function likeManhwa(){
+
+showNotification(
+"❤️ تم إضافة لايك"
+);
+
+}
+
+/* بحث */
 
 function searchManhwa(value){
 
@@ -550,13 +591,17 @@ cards.forEach(card=>{
 let title =
 card.innerText.toLowerCase();
 
-if(title.includes(value.toLowerCase())){
+if(title.includes(
+value.toLowerCase()
+)){
 
-card.style.display = "block";
+card.style.display =
+"block";
 
 }else{
 
-card.style.display = "none";
+card.style.display =
+"none";
 
 }
 
@@ -564,7 +609,44 @@ card.style.display = "none";
 
 }
 
+/* زر الأعلى */
+
+window.onscroll = function(){
+
+let topBtn =
+document.getElementById(
+"topBtn"
+);
+
+if(document.body.scrollTop > 300
+|| document.documentElement.scrollTop > 300){
+
+topBtn.style.display =
+"block";
+
+}else{
+
+topBtn.style.display =
+"none";
+
+}
+
+};
+
+function scrollToTop(){
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+}
+
 </script>
 
+</body>
+</html>
 </body>
 </html>
