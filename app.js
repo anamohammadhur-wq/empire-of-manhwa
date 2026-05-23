@@ -1,137 +1,115 @@
 let coins = 3000;
 
-const coinsElement =
-document.getElementById("coins");
+function updateCoins() {
+  const coinsElement = document.getElementById("coins");
 
-function updateCoins(){
-
-if(coinsElement){
-
-coinsElement.innerText = coins;
-
-}
-
+  if (coinsElement) {
+    coinsElement.innerText = coins;
+  }
 }
 
 updateCoins();
 
 /* إشعارات */
 
-function showNotification(text){
-
-alert(text);
-
+function showNotification(text) {
+  alert(text);
 }
 
-/* الموسيقى */
+/* موسيقى */
 
-let music =
-new Audio(
-"https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=beautiful-relaxing-music-14437.mp3"
+let music = new Audio(
+  "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=beautiful-relaxing-music-14437.mp3"
 );
 
 music.loop = true;
 
 let isPlaying = false;
 
-function toggleMusic(){
+function toggleMusic() {
 
-if(isPlaying){
+  if (isPlaying) {
 
-music.pause();
+    music.pause();
 
-showNotification("🔇 تم إيقاف الموسيقى");
+    showNotification("🔇 تم إيقاف الموسيقى");
 
-isPlaying = false;
+    isPlaying = false;
 
-}else{
+  } else {
 
-music.play();
+    music.play();
 
-showNotification("🎵 تم تشغيل الموسيقى");
+    showNotification("🎵 تم تشغيل الموسيقى");
 
-isPlaying = true;
+    isPlaying = true;
 
-}
+  }
 
 }
 
 /* مكافأة */
 
-function dailyReward(){
+function dailyReward() {
 
-coins += 500;
+  coins += 500;
 
-updateCoins();
+  updateCoins();
 
-showNotification("🎁 حصلت على 500 عملة");
+  showNotification("🎁 حصلت على 500 عملة");
 
 }
 
 /* عجلة الحظ */
 
-function spinWheel(){
+function spinWheel() {
 
-let reward =
-Math.floor(Math.random()*1000);
+  let reward = Math.floor(Math.random() * 1000);
 
-coins += reward;
+  coins += reward;
 
-updateCoins();
+  updateCoins();
 
-showNotification(
-"🎡 ربحت " + reward + " عملة"
-);
+  showNotification("🎡 ربحت " + reward + " عملة");
 
 }
 
 /* تسجيل الدخول */
 
-function login(){
+function login() {
 
-let username =
-prompt("ادخل اسمك");
+  let username = prompt("ادخل اسمك");
 
-if(username){
+  if (username) {
 
-localStorage.setItem(
-"username",
-username
-);
+    localStorage.setItem("username", username);
 
-showNotification(
-"👑 أهلاً " + username
-);
+    showNotification("👑 أهلاً " + username);
 
-}
+  }
 
 }
 
 /* قراءة */
 
-function readManhwa(name){
+function readManhwa(name) {
 
-if(name === "Solo Leveling"){
+  if (name === "Solo Leveling") {
 
-window.location.href =
-"solo.html";
+    window.location.href = "solo.html";
 
-}
-else if(name === "Nano Machine"){
+  }
 
-window.location.href =
-"nano.html";
+  else if (name === "Nano Machine") {
 
-}
-else{
+    window.location.href = "nano.html";
 
-showNotification(
-"📚 قريبًا"
-);
+  }
 
-}
+  else {
 
-}
-}
+    showNotification("📚 قريبًا");
+
+  }
 
 }
