@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>امبراطورية المانهوا</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🔥 امبراطورية المانهوا</h1>
+
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#">المتجر</a>
+    <a href="#">التصنيفات</a>
+    <a href="#">حسابي</a>
+  </nav>
+
+  <div class="coins">
+    🪙 <span id="coins">2500</span>
+  </div>
+</header>
+
+<section class="hero">
+  <h2>أفضل موقع مانهوا عربي</h2>
+  <p>اقرأ أحدث الفصول واستمتع بالمظاهر المتحركة والميزات الأسطورية</p>
+
+  <button onclick="dailyReward()">
+    🎁 استلام الجائزة اليومية
+  </button>
+</section>
+
+<section class="store">
+
+  <h2>🛒 متجر المظاهر</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://i.imgur.com/9Qx9hFh.jpg">
+
+      <h3>مظهر النار</h3>
+
+      <p>500 نقطة</p>
+
+      <button onclick="buyTheme(500)">
+        شراء
+      </button>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/z5q6y6M.jpg">
+
+      <h3>مظهر الظلام</h3>
+
+      <p>800 نقطة</p>
+
+      <button onclick="buyTheme(800)">
+        شراء
+      </button>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/JqT2VhP.jpg">
+
+      <h3>مظهر الجليد</h3>
+
+      <p>1200 نقطة</p>
+
+      <button onclick="buyTheme(1200)">
+        شراء
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section class="latest">
+
+  <h2>📚 أحدث الفصول</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://i.imgur.com/9n3k1gB.jpg">
+
+      <h3>ملك السيف</h3>
+
+      <p>الفصل 32</p>
+
+      <button>قراءة</button>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/9Qx9hFh.jpg">
+
+      <h3>البرج العظيم</h3>
+
+      <p>الفصل 120</p>
+
+      <button>قراءة</button>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/z5q6y6M.jpg">
+
+      <h3>الزهرة السوداء</h3>
+
+      <p>الفصل 45</p>
+
+      <button>قراءة</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="notification" id="notification">
+  🔥 تم الشراء بنجاح
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
