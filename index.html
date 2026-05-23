@@ -4,130 +4,110 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>☠️ إمبراطورية المانهوا</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<title>💀 امبراطورية المانهو</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="icon"
+href="https://cdn-icons-png.flaticon.com/512/889/889140.png">
+
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
 <body>
 
-<!-- شاشة التحميل -->
+<!-- الشريط العلوي -->
 
-<div id="loader">
-
-<h1>
-☠️ إمبراطورية المانهوا
-</h1>
-
-</div>
-
-<!-- Sidebar -->
-
-<div class="sidebar">
-
-<a href="#home">🏠</a>
-<a href="#latest">🔥</a>
-<a href="#store">🛒</a>
-<a href="#comments">💬</a>
-<a href="#profile">👑</a>
-
-</div>
-
-<!-- زر الصعود -->
-
-<button id="topBtn" onclick="scrollToTop()">
-⬆️
-</button>
-
-<!-- الخلفية -->
-
-<div class="particles"></div>
-
-<!-- الهيدر -->
-
-<header>
+<header class="navbar">
 
 <div class="logo">
-☠️ إمبراطورية المانهوا
+💀 امبراطورية المانهو
 </div>
 
 <nav>
 
 <a href="#home">الرئيسية</a>
+
 <a href="#latest">الأحدث</a>
-<a href="#store">المتجر</a>
+
 <a href="#comments">التعليقات</a>
-<a href="#profile">البروفايل</a>
+
+<a href="#store">المتجر</a>
+
+<a href="#profile">
+البروفايل
+</a>
 
 </nav>
 
 <div class="coins-box">
 
-🪙 <span id="coins">3000</span>
+<span id="coins">
+3000
+</span>
+
+🪙
 
 </div>
 
 </header>
 
-<!-- الشريط العلوي -->
+<!-- الأزرار الجانبية -->
 
-<div class="top-bar">
-
-<input
-type="text"
-id="search"
-placeholder="ابحث عن مانهوا..."
-onkeyup="searchManhwa()"
->
-
-<div class="user-profile">
-
-👑 <span id="username">زائر</span>
+<div class="side-buttons">
 
 <button onclick="login()">
-تسجيل دخول
+🏠
+</button>
+
+<button onclick="toggleMusic()">
+🔥
+</button>
+
+<button onclick="spinWheel()">
+🛒
+</button>
+
+<button onclick="dailyReward()">
+💬
+</button>
+
+<button>
+👑
 </button>
 
 </div>
 
-</div>
+<!-- الصفحة الرئيسية -->
 
-<!-- الواجهة -->
-
-<section class="hero" id="home">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
+<section id="home"
+class="hero">
 
 <h1>
-🔥 عالم المانهوا الأسطوري
+🔥 عالم المانهو الأسطوري
 </h1>
 
 <p>
-أفضل موقع مانهوا عربي في المجرة ☠️
+أفضل موقع مانهوا عربي في المجرة 💀
 </p>
 
 <div class="hero-buttons">
 
-<button onclick="dailyReward()">
-🎁 مكافأة يومية
+<button onclick="spinWheel()">
+🎡 عجلة الحظ
 </button>
 
 <button onclick="toggleMusic()">
 🎵 موسيقى
 </button>
 
-<button onclick="spinWheel()">
-🎡 عجلة الحظ
+<button onclick="dailyReward()">
+🎁 مكافأة يومية
 </button>
-
-</div>
 
 </div>
 
@@ -135,7 +115,8 @@ onkeyup="searchManhwa()"
 
 <!-- أحدث الفصول -->
 
-<section class="section" id="latest">
+<section id="latest"
+class="section">
 
 <h2>
 🔥 أحدث الفصول
@@ -145,109 +126,37 @@ onkeyup="searchManhwa()"
 
 <div class="card">
 
-<img src="https://picsum.photos/400/500?1">
+<img
+src="https://i.imgur.com/0M0y0xL.jpg">
 
-<div class="card-content">
+<h3>
+Solo Leveling
+</h3>
 
-<h3>Solo Leveling</h3>
+<button
+onclick="readManhwa('Solo Leveling')">
 
-<p>
-الفصل 201
-</p>
+قراءة
 
-<div class="likes">
-❤️ 25K
-</div>
-
-<div class="card-buttons">
-
-<button onclick="readManhwa('Solo Leveling')">
-📖 قراءة
 </button>
-
-<button onclick="addFavorite('Solo Leveling')">
-❤️
-</button>
-
-</div>
-
-<div class="views">
-👁️ 2.5M مشاهدة
-</div>
-
-</div>
 
 </div>
 
 <div class="card">
 
-<img src="https://picsum.photos/400/500?2">
+<img
+src="https://i.imgur.com/GFz4G4A.jpg">
 
-<div class="card-content">
+<h3>
+Nano Machine
+</h3>
 
-<h3>Nano Machine</h3>
+<button
+onclick="readManhwa('Nano Machine')">
 
-<p>
-الفصل 180
-</p>
+قراءة
 
-<div class="likes">
-❤️ 18K
-</div>
-
-<div class="card-buttons">
-
-<button onclick="readManhwa('Nano Machine')">
-📖 قراءة
 </button>
-
-<button onclick="addFavorite('Nano Machine')">
-❤️
-</button>
-
-</div>
-
-<div class="views">
-👁️ 1.8M مشاهدة
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://picsum.photos/400/500?3">
-
-<div class="card-content">
-
-<h3>TBATE</h3>
-
-<p>
-الفصل 170
-</p>
-
-<div class="likes">
-❤️ 30K
-</div>
-
-<div class="card-buttons">
-
-<button onclick="readManhwa('TBATE')">
-📖 قراءة
-</button>
-
-<button onclick="addFavorite('TBATE')">
-❤️
-</button>
-
-</div>
-
-<div class="views">
-👁️ 3M مشاهدة
-</div>
-
-</div>
 
 </div>
 
@@ -257,7 +166,8 @@ onkeyup="searchManhwa()"
 
 <!-- المتجر -->
 
-<section class="section" id="store">
+<section id="store"
+class="section">
 
 <h2>
 🛒 متجر المظاهر
@@ -267,41 +177,25 @@ onkeyup="searchManhwa()"
 
 <div class="card">
 
-<div class="card-content">
-
 <h3>
-🌌 Neon Theme
+🌌 مظهر الظلام
 </h3>
 
-<p>
-1000 🪙
-</p>
-
-<button onclick="activateTheme('neon')">
+<button>
 شراء
 </button>
-
-</div>
 
 </div>
 
 <div class="card">
 
-<div class="card-content">
-
 <h3>
-🩸 Blood Theme
+🔥 مظهر النار
 </h3>
 
-<p>
-1500 🪙
-</p>
-
-<button onclick="activateTheme('blood')">
+<button>
 شراء
 </button>
-
-</div>
 
 </div>
 
@@ -311,93 +205,24 @@ onkeyup="searchManhwa()"
 
 <!-- البروفايل -->
 
-<section class="section" id="profile">
+<section id="profile"
+class="section">
 
 <h2>
 👑 البروفايل
 </h2>
 
-<div class="profile-card">
-
-<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
-
-<h3 id="profile-name">
-ملك المانهوا
-</h3>
-
 <p>
-LVL 99 ☠️
+اسم المستخدم:
+<span id="username">
+زائر
+</span>
 </p>
 
-<p>
-XP: 999999
-</p>
-
-<div class="level-bar">
-
-<div class="level-fill"></div>
-
-</div>
-
-</div>
-
 </section>
-
-<!-- التعليقات -->
-
-<section class="section" id="comments">
-
-<h2>
-💬 التعليقات
-</h2>
-
-<div class="comment-box">
-
-<input
-type="text"
-id="comment-input"
-placeholder="اكتب تعليق..."
->
-
-<button onclick="addComment()">
-إرسال
-</button>
-
-</div>
-
-<div id="comments-container">
-
-</div>
-
-</section>
-
-<!-- القارئ -->
-
-<section class="section" id="reader">
-
-<h2 id="reader-title">
-📖 اختر مانهوا للقراءة
-</h2>
-
-<div class="reader-images">
-
-<img src="https://picsum.photos/800/1200?10">
-
-<img src="https://picsum.photos/800/1200?11">
-
-</div>
-
-</section>
-
-<!-- إشعار -->
-
-<div id="notification"></div>
 
 <script src="app.js"></script>
 
 </body>
-
-</html>
-</html>
 
 </html>
