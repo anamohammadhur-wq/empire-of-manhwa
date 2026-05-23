@@ -1,3 +1,5 @@
+/* العملات */
+
 let coins =
 localStorage.getItem("coins") || 3000;
 
@@ -9,7 +11,11 @@ document.getElementById("coins");
 const notification =
 document.getElementById("notification");
 
+if(coinsElement){
+
 updateCoins();
+
+}
 
 function updateCoins(){
 
@@ -19,7 +25,11 @@ localStorage.setItem("coins", coins);
 
 }
 
+/* الإشعارات */
+
 function showNotification(text){
+
+if(notification){
 
 notification.innerText = text;
 
@@ -31,9 +41,15 @@ notification.style.display = "none";
 
 },3000);
 
+}else{
+
+alert(text);
+
 }
 
-/* المكافأة */
+}
+
+/* المكافأة اليومية */
 
 function dailyReward(){
 
@@ -41,14 +57,18 @@ coins += 500;
 
 updateCoins();
 
-showNotification("🎁 حصلت على 500 عملة");
+showNotification(
+"🎁 حصلت على 500 عملة"
+);
 
 }
 
 /* الموسيقى */
 
 let music =
-new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=beautiful-relaxing-music-14437.mp3");
+new Audio(
+"https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=beautiful-relaxing-music-14437.mp3"
+);
 
 music.loop = true;
 
@@ -60,7 +80,9 @@ if(isPlaying){
 
 music.pause();
 
-showNotification("🔇 تم إيقاف الموسيقى");
+showNotification(
+"🔇 تم إيقاف الموسيقى"
+);
 
 isPlaying = false;
 
@@ -68,7 +90,9 @@ isPlaying = false;
 
 music.play();
 
-showNotification("🎵 تم تشغيل الموسيقى");
+showNotification(
+"🎵 تم تشغيل الموسيقى"
+);
 
 isPlaying = true;
 
@@ -87,21 +111,9 @@ coins += reward;
 
 updateCoins();
 
-showNotification("🎡 ربحت " + reward + " عملة!");
-
-}
-
-/* القراءة */
-
-function readManhwa(name){
-
-document.getElementById("reader-title")
-.innerText =
-"📖 جاري قراءة " + name;
-
-window.location.href = "#reader";
-
-showNotification("📚 تم فتح " + name);
+showNotification(
+"🎡 ربحت " + reward + " عملة!"
+);
 
 }
 
@@ -117,27 +129,86 @@ if(username){
 document.getElementById("username")
 .innerText = username;
 
-document.getElementById("profile-name")
-.innerText = username;
+let profileName =
+document.getElementById("profile-name");
 
-localStorage.setItem("username", username);
+if(profileName){
 
-showNotification("🔥 أهلاً " + username);
+profileName.innerText = username;
+
+}
+
+localStorage.setItem(
+"username",
+username
+);
+
+showNotification(
+"🔥 أهلاً " + username
+);
 
 }
 
 }
+
+/* تسجيل الدخول من الصفحة */
+
+function loginUser(){
+
+let username =
+document.getElementById(
+"login-username"
+).value;
+
+let password =
+document.getElementById(
+"login-password"
+).value;
+
+if(username && password){
+
+localStorage.setItem(
+"username",
+username
+);
+
+window.location.href =
+"index.html";
+
+}else{
+
+alert("❌ املأ جميع الحقول");
+
+}
+
+}
+
+/* تحميل المستخدم */
 
 const savedUser =
 localStorage.getItem("username");
 
 if(savedUser){
 
-document.getElementById("username")
-.innerText = savedUser;
+let usernameText =
+document.getElementById("username");
 
-document.getElementById("profile-name")
-.innerText = savedUser;
+if(usernameText){
+
+usernameText.innerText =
+savedUser;
+
+}
+
+let profileName =
+document.getElementById("profile-name");
+
+if(profileName){
+
+profileName.innerText =
+savedUser;
+
+}
 
 }
 
@@ -176,185 +247,74 @@ card.style.display = "none";
 
 function activateTheme(theme){
 
-document.body.classList.remove("neon");
-document.body.classList.remove("blood");
+document.body.classList.remove(
+"neon"
+);
+
+document.body.classList.remove(
+"blood"
+);
 
 document.body.classList.add(theme);
 
-showNotification("🎨 تم تفعيل الثيم");
+localStorage.setItem(
+"theme",
+theme
+);
+
+showNotification(
+"🎨 تم تفعيل الثيم"
+);
 
 }
 
-/* التعليقات */
-
-function addComment(){
-
-let input =
-document.getElementById("comment-input");
-
-let text = input.value;
-
-if(text.trim() !== ""){
-
-let comment =
-document.createElement("div");
-
-comment.classList.add("comment");
-
-comment.innerHTML =
-"👑 " + text;
-
-document
-.getElementById("comments-container")
-.prepend(comment);
-
-input.value = "";
-
-showNotification("💬 تم إضافة التعليق");
-
-}
-
-}
-
-showNotification("🎡 ربحت " + reward + " عملة!");
-
-}
-/* زر الصعود */
-
-window.onscroll = function(){
-
-const topBtn =
-document.getElementById("topBtn");
-
-if(document.body.scrollTop > 300 ||
-document.documentElement.scrollTop > 300){
-
-topBtn.style.display = "block";
-
-}else{
-
-topBtn.style.display = "none";
-
-}
-
-};
-
-function scrollToTop(){
-
-window.scrollTo({
-
-top:0,
-behavior:"smooth"
-
-});
-
-}
-
-/* حفظ الثيم */
+/* تحميل الثيم */
 
 const savedTheme =
 localStorage.getItem("theme");
 
 if(savedTheme){
 
-document.body.classList.add(savedTheme);
-
-}
-
-function activateTheme(theme){
-
-document.body.classList.remove("neon");
-document.body.classList.remove("blood");
-
-document.body.classList.add(theme);
-
-localStorage.setItem("theme", theme);
-
-showNotification("🎨 تم تفعيل الثيم");
-
-}
-
-/* XP */
-
-let xp =
-localStorage.getItem("xp") || 0;
-
-xp = parseInt(xp);
-
-function gainXP(amount){
-
-xp += amount;
-
-localStorage.setItem("xp", xp);
-
-}
-
-/* مكافآت XP */
-
-function readManhwa(name){
-
-gainXP(50);
-
-document.getElementById("reader-title")
-.innerText =
-"📖 جاري قراءة " + name;
-
-window.location.href = "#reader";
-
-showNotification("📚 تم فتح " + name);
-
-}
-
-
-/* تسجيل الدخول */
-
-function loginUser(){
-
-let username =
-document.getElementById("login-username").value;
-
-let password =
-document.getElementById("login-password").value;
-
-if(username && password){
-
-localStorage.setItem(
-"username",
-username
+document.body.classList.add(
+savedTheme
 );
-
-window.location.href =
-"index.html";
-
-}else{
-
-alert("❌ املأ جميع الحقول");
-
-}
-
-}
-
-/* البروفايل */
-
-const profilePageName =
-document.getElementById(
-"profilePageName"
-);
-
-if(profilePageName){
-
-profilePageName.innerText =
-localStorage.getItem("username")
-|| "زائر";
-
-document.getElementById(
-"profileCoins"
-).innerText =
-"🪙 " + coins;
 
 }
 
 /* المفضلة */
+
+let favorites =
+JSON.parse(
+localStorage.getItem("favorites")
+)
+|| [];
+
+function addFavorite(name){
+
+if(!favorites.includes(name)){
+
+favorites.push(name);
+
+localStorage.setItem(
+"favorites",
+JSON.stringify(favorites)
+);
+
+showNotification(
+"❤️ تمت إضافة " + name
+);
+
+}else{
+
+showNotification(
+"⚡ موجود بالفعل بالمفضلة"
+);
+
+}
+
+}
+
+/* صفحة المفضلة */
 
 const favoritesContainer =
 document.getElementById(
@@ -387,6 +347,43 @@ favoritesContainer.innerHTML += `
 
 }
 
+/* التعليقات */
+
+function addComment(){
+
+let input =
+document.getElementById(
+"comment-input"
+);
+
+let text = input.value;
+
+if(text.trim() !== ""){
+
+let comment =
+document.createElement("div");
+
+comment.classList.add("comment");
+
+comment.innerHTML =
+"👑 " + text;
+
+document
+.getElementById(
+"comments-container"
+)
+.prepend(comment);
+
+input.value = "";
+
+showNotification(
+"💬 تم إضافة التعليق"
+);
+
+}
+
+}
+
 /* القراءة */
 
 function readManhwa(name){
@@ -396,15 +393,63 @@ if(name === "Solo Leveling"){
 window.location.href =
 "solo.html";
 
-}else if(name === "Nano Machine"){
+}
+else if(name === "Nano Machine"){
 
 window.location.href =
 "nano.html";
 
+}
+else{
+
+showNotification(
+"📚 سيتم إضافة الصفحة قريبًا"
+);
+
+}
+
+}
+
+/* زر الصعود */
+
+window.onscroll = function(){
+
+const topBtn =
+document.getElementById(
+"topBtn"
+);
+
+if(topBtn){
+
+if(
+document.body.scrollTop > 300 ||
+document.documentElement.scrollTop > 300
+){
+
+topBtn.style.display =
+"block";
+
 }else{
 
-alert("📚 قريبًا");
+topBtn.style.display =
+"none";
 
+}
+
+}
+
+};
+
+function scrollToTop(){
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+}
 }
 
 }
