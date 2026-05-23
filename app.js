@@ -1,6 +1,6 @@
 let coins = 3000;
 
-/* العملات */
+/* تحديث العملات */
 
 function updateCoins() {
 
@@ -17,45 +17,11 @@ function updateCoins() {
 
 updateCoins();
 
-/* إشعارات */
+/* الإشعارات */
 
 function showNotification(text) {
 
   alert(text);
-
-}
-
-/* الموسيقى */
-
-let music = new Audio(
-"https://cdn.pixabay.com/audio/2022/10/25/audio_946f0eeb0f.mp3"
-);
-
-music.loop = true;
-
-let isPlaying = false;
-
-function toggleMusic() {
-
-  if (isPlaying) {
-
-    music.pause();
-
-    showNotification("🔇 تم إيقاف الموسيقى");
-
-    isPlaying = false;
-
-  }
-
-  else {
-
-    music.play();
-
-    showNotification("🎵 تم تشغيل الموسيقى");
-
-    isPlaying = true;
-
-  }
 
 }
 
@@ -108,11 +74,21 @@ function login() {
     "🔥 أهلاً " + username
     );
 
+    const userElement =
+    document.getElementById("username");
+
+    if (userElement) {
+
+      userElement.innerText =
+      username;
+
+    }
+
   }
 
 }
 
-/* فتح صفحات المانهوات */
+/* قراءة المانهوا */
 
 function readManhwa(name) {
 
@@ -151,7 +127,5 @@ function readManhwa(name) {
     );
 
   }
-
-}
 
 }
