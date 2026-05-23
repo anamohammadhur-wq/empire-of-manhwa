@@ -1,125 +1,227 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>امبراطورية المانهوا</title>
 
-  <link rel="stylesheet" href="style.css">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>امبراطورية المانهوا</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <header>
-  <h1>🔥 امبراطورية المانهوا</h1>
 
-  <nav>
-    <a href="#">الرئيسية</a>
-    <a href="#">المتجر</a>
-    <a href="#">التصنيفات</a>
-    <a href="#">حسابي</a>
-  </nav>
+<div class="logo">
+🔥 امبراطورية المانهوا
+</div>
 
-  <div class="coins">
-    🪙 <span id="coins">2500</span>
-  </div>
+<nav>
+
+<a href="#">الرئيسية</a>
+<a href="#">الأحدث</a>
+<a href="#">الأكثر مشاهدة</a>
+<a href="#">المتجر</a>
+<a href="#">حسابي</a>
+
+</nav>
+
+<div class="coins-box">
+
+🪙 <span id="coins">2500</span>
+
+</div>
+
 </header>
 
 <section class="hero">
-  <h2>أفضل موقع مانهوا عربي</h2>
-  <p>اقرأ أحدث الفصول واستمتع بالمظاهر المتحركة والميزات الأسطورية</p>
 
-  <button onclick="dailyReward()">
-    🎁 استلام الجائزة اليومية
-  </button>
-</section>
+<div class="overlay"></div>
 
-<section class="store">
+<div class="hero-content">
 
-  <h2>🛒 متجر المظاهر</h2>
+<h1>
+امبراطورية المانهوا
+</h1>
 
-  <div class="cards">
+<p>
+اقرأ أفضل المانهوا العربية بجودة عالية
+</p>
 
-    <div class="card">
-      <img src="https://i.imgur.com/9Qx9hFh.jpg">
+<button onclick="dailyReward()">
+🎁 استلام المكافأة اليومية
+</button>
 
-      <h3>مظهر النار</h3>
+</div>
 
-      <p>500 نقطة</p>
-
-      <button onclick="buyTheme(500)">
-        شراء
-      </button>
-    </div>
-
-    <div class="card">
-      <img src="https://i.imgur.com/z5q6y6M.jpg">
-
-      <h3>مظهر الظلام</h3>
-
-      <p>800 نقطة</p>
-
-      <button onclick="buyTheme(800)">
-        شراء
-      </button>
-    </div>
-
-    <div class="card">
-      <img src="https://i.imgur.com/JqT2VhP.jpg">
-
-      <h3>مظهر الجليد</h3>
-
-      <p>1200 نقطة</p>
-
-      <button onclick="buyTheme(1200)">
-        شراء
-      </button>
-    </div>
-
-  </div>
 </section>
 
 <section class="latest">
 
-  <h2>📚 أحدث الفصول</h2>
+<h2>
+🔥 أحدث الفصول
+</h2>
 
-  <div class="cards">
+<div class="manga-grid">
 
-    <div class="card">
-      <img src="https://i.imgur.com/9n3k1gB.jpg">
+<div class="card">
 
-      <h3>ملك السيف</h3>
+<img src="https://i.imgur.com/q6Y6Mjp.jpeg">
 
-      <p>الفصل 32</p>
+<div class="info">
 
-      <button>قراءة</button>
-    </div>
+<h3>Solo Leveling</h3>
 
-    <div class="card">
-      <img src="https://i.imgur.com/9Qx9hFh.jpg">
+<p>
+الفصل 201
+</p>
 
-      <h3>البرج العظيم</h3>
+<button>
+قراءة
+</button>
 
-      <p>الفصل 120</p>
+</div>
 
-      <button>قراءة</button>
-    </div>
+</div>
 
-    <div class="card">
-      <img src="https://i.imgur.com/z5q6y6M.jpg">
+<div class="card">
 
-      <h3>الزهرة السوداء</h3>
+<img src="https://i.imgur.com/WKQpK8K.jpeg">
 
-      <p>الفصل 45</p>
+<div class="info">
 
-      <button>قراءة</button>
-    </div>
+<h3>Omniscient Reader</h3>
 
-  </div>
+<p>
+الفصل 250
+</p>
+
+<button>
+قراءة
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://i.imgur.com/Uw7P9fM.jpeg">
+
+<div class="info">
+
+<h3>The Beginning After The End</h3>
+
+<p>
+الفصل 180
+</p>
+
+<button>
+قراءة
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://i.imgur.com/9Qx9hFh.jpg">
+
+<div class="info">
+
+<h3>ملك السيف</h3>
+
+<p>
+الفصل 55
+</p>
+
+<button>
+قراءة
+</button>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
+<section class="store">
+
+<h2>
+🛒 متجر المظاهر
+</h2>
+
+<div class="manga-grid">
+
+<div class="card">
+
+<img src="https://i.imgur.com/JqT2VhP.jpg">
+
+<div class="info">
+
+<h3>
+مظهر الظل
+</h3>
+
+<p>
+500 نقطة
+</p>
+
+<button onclick="buyTheme(500)">
+شراء
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://i.imgur.com/z5q6y6M.jpg">
+
+<div class="info">
+
+<h3>
+مظهر التنين
+</h3>
+
+<p>
+1000 نقطة
+</p>
+
+<button onclick="buyTheme(1000)">
+شراء
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 جميع الحقوق محفوظة - امبراطورية المانهوا
+</p>
+
+</footer>
+
 <div class="notification" id="notification">
-  🔥 تم الشراء بنجاح
+
+🔥 تم الشراء بنجاح
+
 </div>
 
 <script src="app.js"></script>
