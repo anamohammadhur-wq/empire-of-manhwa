@@ -80,9 +80,13 @@ showNotification("🎨 تم تغيير الثيم");
 
 function readManhwa(name){
 
-showNotification("📖 جاري فتح " + name);
+document.getElementById("reader-title")
+.innerText =
+"📖 جاري قراءة " + name;
 
 window.location.href = "#reader";
+
+showNotification("📚 تم فتح " + name);
 
 }
 
@@ -94,6 +98,9 @@ prompt("ادخل اسم المستخدم");
 if(username){
 
 document.getElementById("username")
+.innerText = username;
+
+document.getElementById("profile-name")
 .innerText = username;
 
 localStorage.setItem("username", username);
@@ -110,6 +117,9 @@ localStorage.getItem("username");
 if(savedUser){
 
 document.getElementById("username")
+.innerText = savedUser;
+
+document.getElementById("profile-name")
 .innerText = savedUser;
 
 }
