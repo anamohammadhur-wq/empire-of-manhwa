@@ -219,3 +219,88 @@ showNotification("💬 تم إضافة التعليق");
 showNotification("🎡 ربحت " + reward + " عملة!");
 
 }
+/* زر الصعود */
+
+window.onscroll = function(){
+
+const topBtn =
+document.getElementById("topBtn");
+
+if(document.body.scrollTop > 300 ||
+document.documentElement.scrollTop > 300){
+
+topBtn.style.display = "block";
+
+}else{
+
+topBtn.style.display = "none";
+
+}
+
+};
+
+function scrollToTop(){
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+}
+
+/* حفظ الثيم */
+
+const savedTheme =
+localStorage.getItem("theme");
+
+if(savedTheme){
+
+document.body.classList.add(savedTheme);
+
+}
+
+function activateTheme(theme){
+
+document.body.classList.remove("neon");
+document.body.classList.remove("blood");
+
+document.body.classList.add(theme);
+
+localStorage.setItem("theme", theme);
+
+showNotification("🎨 تم تفعيل الثيم");
+
+}
+
+/* XP */
+
+let xp =
+localStorage.getItem("xp") || 0;
+
+xp = parseInt(xp);
+
+function gainXP(amount){
+
+xp += amount;
+
+localStorage.setItem("xp", xp);
+
+}
+
+/* مكافآت XP */
+
+function readManhwa(name){
+
+gainXP(50);
+
+document.getElementById("reader-title")
+.innerText =
+"📖 جاري قراءة " + name;
+
+window.location.href = "#reader";
+
+showNotification("📚 تم فتح " + name);
+
+}
