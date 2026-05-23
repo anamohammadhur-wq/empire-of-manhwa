@@ -1,9 +1,7 @@
 let coins = localStorage.getItem("coins");
 
 if(!coins){
-
 coins = 2500;
-
 }
 
 coins = parseInt(coins);
@@ -43,11 +41,11 @@ coins -= price;
 
 updateCoins();
 
-showNotification("🔥 تم الشراء بنجاح");
+showNotification("🔥 تم شراء العنصر");
 
 }else{
 
-showNotification("❌ لا يوجد نقاط كافية");
+showNotification("❌ نقاط غير كافية");
 
 }
 
@@ -65,11 +63,30 @@ showNotification("🎁 حصلت على 500 نقطة");
 
 function readManga(name){
 
-document.getElementById("reader-title").innerText =
-"📖 " + name;
+document.getElementById("reader-title")
+.innerText = "📖 " + name;
 
 window.location.href = "#reader";
 
-showNotification("📚 تم فتح " + name);
+showNotification("📚 جاري فتح " + name);
+
+}
+
+function toggleTheme(){
+
+document.body.classList.toggle("light-mode");
+
+showNotification("🌙 تم تغيير الثيم");
+
+}
+
+function playMusic(){
+
+const music =
+document.getElementById("bgmusic");
+
+music.play();
+
+showNotification("🎵 تم تشغيل الموسيقى");
 
 }
