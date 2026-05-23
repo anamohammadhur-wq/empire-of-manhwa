@@ -13,16 +13,14 @@
 body{
 
 margin:0;
-padding:0;
 background:#050505;
 color:white;
 font-family:Tahoma;
 direction:rtl;
-scroll-behavior:smooth;
 
 }
 
-/* شريط علوي */
+/* النافبار */
 
 .navbar{
 
@@ -32,9 +30,6 @@ align-items:center;
 padding:20px;
 background:#0d0d0d;
 border-bottom:2px solid #00ff99;
-position:sticky;
-top:0;
-z-index:999;
 
 }
 
@@ -43,23 +38,6 @@ z-index:999;
 font-size:35px;
 font-weight:bold;
 color:#00ff99;
-text-shadow:0 0 15px #00ff99;
-
-}
-
-nav a{
-
-color:white;
-text-decoration:none;
-margin:15px;
-font-size:18px;
-font-weight:bold;
-
-}
-
-nav a:hover{
-
-color:#00ff99;
 
 }
 
@@ -67,31 +45,29 @@ color:#00ff99;
 
 background:#00ff99;
 color:black;
-padding:12px 20px;
+padding:10px 20px;
 border-radius:15px;
 font-weight:bold;
 
 }
 
-/* البحث */
+/* البروفايل */
 
-.search-box{
+.profile{
 
-text-align:center;
-margin:30px;
+display:flex;
+align-items:center;
+gap:15px;
 
 }
 
-.search-box input{
+.profile img{
 
-width:60%;
-padding:18px;
-border:none;
-border-radius:15px;
-background:#111;
-color:white;
-font-size:18px;
-border:2px solid #00ff99;
+width:60px;
+height:60px;
+border-radius:50%;
+border:3px solid #00ff99;
+object-fit:cover;
 
 }
 
@@ -100,7 +76,7 @@ border:2px solid #00ff99;
 .hero{
 
 text-align:center;
-padding:120px 20px;
+padding:100px 20px;
 
 background:
 linear-gradient(
@@ -111,62 +87,100 @@ rgba(0,0,0,0.8)
 url("https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071");
 
 background-size:cover;
-background-position:center;
 
 }
 
 .hero h1{
 
-font-size:80px;
+font-size:70px;
 color:#00ff99;
-text-shadow:0 0 25px #00ff99;
 
 }
-
-.hero p{
-
-font-size:30px;
-
-}
-
-/* الأزرار */
 
 .hero-buttons button{
 
-padding:18px 35px;
+padding:15px 30px;
 margin:10px;
 border:none;
 border-radius:15px;
 background:#00ff99;
-color:black;
 font-size:20px;
 font-weight:bold;
 cursor:pointer;
 
 }
 
-.hero-buttons button:hover{
+/* نافذة تسجيل الدخول */
 
-transform:scale(1.07);
+.modal{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+
+display:none;
+justify-content:center;
+align-items:center;
 
 }
 
-/* الأقسام */
+.modal-content{
 
-.section{
-
-padding:70px 40px;
+background:#111;
+padding:40px;
+border-radius:20px;
+width:350px;
+text-align:center;
+border:2px solid #00ff99;
 
 }
 
-.section h2{
+.modal-content h2{
 
-font-size:40px;
 color:#00ff99;
 
 }
 
+.modal-content input{
+
+width:90%;
+padding:15px;
+margin:10px;
+border:none;
+border-radius:10px;
+background:#222;
+color:white;
+
+}
+
+.modal-content button{
+
+padding:15px 25px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+background:#00ff99;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+.upload-box{
+
+margin-top:15px;
+
+}
+
 /* البطاقات */
+
+.section{
+
+padding:60px 30px;
+
+}
 
 .cards{
 
@@ -180,18 +194,10 @@ justify-content:center;
 .card{
 
 background:#111;
+width:300px;
 border-radius:20px;
 overflow:hidden;
-width:300px;
 border:2px solid #00ff99;
-transition:0.3s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-box-shadow:0 0 25px #00ff99;
 
 }
 
@@ -209,12 +215,6 @@ padding:15px;
 
 }
 
-.card h3{
-
-font-size:25px;
-
-}
-
 .card button{
 
 width:100%;
@@ -222,65 +222,8 @@ padding:15px;
 border:none;
 border-radius:12px;
 background:#00ff99;
-color:black;
-font-size:18px;
 font-weight:bold;
 cursor:pointer;
-
-}
-
-/* معلومات */
-
-.info{
-
-display:flex;
-justify-content:space-between;
-margin-top:10px;
-font-size:18px;
-
-}
-
-/* إشعارات */
-
-.notification{
-
-position:fixed;
-bottom:20px;
-left:20px;
-background:#00ff99;
-color:black;
-padding:15px 25px;
-border-radius:15px;
-font-weight:bold;
-display:none;
-z-index:9999;
-
-}
-
-/* زر الأعلى */
-
-.topBtn{
-
-position:fixed;
-bottom:20px;
-right:20px;
-background:#00ff99;
-color:black;
-border:none;
-padding:15px;
-border-radius:50%;
-font-size:20px;
-cursor:pointer;
-display:none;
-
-}
-
-footer{
-
-text-align:center;
-padding:30px;
-background:#0d0d0d;
-margin-top:50px;
 
 }
 
@@ -290,37 +233,11 @@ margin-top:50px;
 
 <body>
 
-<div class="notification"
-id="notification">
-
-تم التنفيذ
-
-</div>
-
-<button class="topBtn"
-id="topBtn"
-onclick="scrollToTop()">
-
-⬆️
-
-</button>
-
 <header class="navbar">
 
 <div class="logo">
-
 💀 امبراطورية المانهو
-
 </div>
-
-<nav>
-
-<a href="#">الرئيسية</a>
-<a href="#">الأحدث</a>
-<a href="#">الأكثر مشاهدة</a>
-<a href="#">البروفايل</a>
-
-</nav>
 
 <div class="coins-box">
 
@@ -331,50 +248,43 @@ onclick="scrollToTop()">
 
 </div>
 
-</header>
+<div class="profile">
 
-<div class="search-box">
-
-<input
-type="text"
-placeholder="ابحث عن مانهوا..."
-onkeyup="searchManhwa(this.value)"
+<img
+id="profileImage"
+src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
 >
 
+<div>
+
+<div id="username">
+زائر
 </div>
+
+<button onclick="openLogin()">
+تسجيل دخول
+</button>
+
+</div>
+
+</div>
+
+</header>
 
 <section class="hero">
 
 <h1>
-
 🔥 عالم المانهو الأسطوري
-
 </h1>
-
-<p>
-
-أفضل موقع مانهوا عربي في المجرة ☠️
-
-</p>
 
 <div class="hero-buttons">
 
 <button onclick="spinWheel()">
-
 🎡 عجلة الحظ
-
 </button>
 
 <button onclick="dailyReward()">
-
 🎁 مكافأة يومية
-
-</button>
-
-<button onclick="login()">
-
-👑 تسجيل دخول
-
 </button>
 
 </div>
@@ -382,12 +292,6 @@ onkeyup="searchManhwa(this.value)"
 </section>
 
 <section class="section">
-
-<h2>
-
-🔥 أحدث المانهوا
-
-</h2>
 
 <div class="cards">
 
@@ -404,18 +308,6 @@ Solo Leveling
 <button onclick="readManhwa('Solo Leveling')">
 📖 قراءة
 </button>
-
-<div class="info">
-
-<span onclick="likeManhwa()">
-❤️ 120
-</span>
-
-<span>
-👁️ 15K
-</span>
-
-</div>
 
 </div>
 
@@ -435,18 +327,6 @@ Nano Machine
 📖 قراءة
 </button>
 
-<div class="info">
-
-<span onclick="likeManhwa()">
-❤️ 98
-</span>
-
-<span>
-👁️ 11K
-</span>
-
-</div>
-
 </div>
 
 </div>
@@ -455,52 +335,152 @@ Nano Machine
 
 </section>
 
-<footer>
+<!-- نافذة تسجيل الدخول -->
 
-👑 LVL 99 | امبراطورية المانهو 2026
+<div class="modal"
+id="loginModal">
 
-</footer>
+<div class="modal-content">
+
+<h2>
+👑 إنشاء حساب
+</h2>
+
+<input
+type="text"
+id="nameInput"
+placeholder="اسم المستخدم"
+>
+
+<input
+type="password"
+placeholder="كلمة المرور"
+>
+
+<div class="upload-box">
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+>
+
+</div>
+
+<button onclick="saveProfile()">
+حفظ الحساب
+</button>
+
+</div>
+
+</div>
 
 <script>
+
+/* العملات */
 
 let coins =
 localStorage.getItem("coins")
 || 3000;
 
-function updateCoins(){
-
 document.getElementById("coins")
 .innerText = coins;
 
-localStorage.setItem(
-"coins",
-coins
-);
+/* فتح النافذة */
+
+function openLogin(){
+
+document.getElementById(
+"loginModal"
+).style.display = "flex";
 
 }
 
-updateCoins();
+/* حفظ الحساب */
 
-/* إشعار */
+function saveProfile(){
 
-function showNotification(text){
-
-let notification =
+let username =
 document.getElementById(
-"notification"
+"nameInput"
+).value;
+
+if(username){
+
+localStorage.setItem(
+"username",
+username
 );
 
-notification.innerText = text;
+document.getElementById(
+"username"
+).innerText = username;
 
-notification.style.display =
-"block";
+}
 
-setTimeout(()=>{
+/* الصورة */
 
-notification.style.display =
-"none";
+let file =
+document.getElementById(
+"imageInput"
+).files[0];
 
-},2000);
+if(file){
+
+let reader =
+new FileReader();
+
+reader.onload = function(e){
+
+let image =
+e.target.result;
+
+localStorage.setItem(
+"profileImage",
+image
+);
+
+document.getElementById(
+"profileImage"
+).src = image;
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+document.getElementById(
+"loginModal"
+).style.display = "none";
+
+}
+
+/* تحميل البيانات */
+
+let savedUser =
+localStorage.getItem(
+"username"
+);
+
+if(savedUser){
+
+document.getElementById(
+"username"
+).innerText = savedUser;
+
+}
+
+let savedImage =
+localStorage.getItem(
+"profileImage"
+);
+
+if(savedImage){
+
+document.getElementById(
+"profileImage"
+).src = savedImage;
 
 }
 
@@ -514,9 +494,16 @@ Math.floor(Math.random()*1000);
 coins =
 parseInt(coins) + reward;
 
-updateCoins();
+localStorage.setItem(
+"coins",
+coins
+);
 
-showNotification(
+document.getElementById(
+"coins"
+).innerText = coins;
+
+alert(
 "🎡 ربحت " + reward + " عملة"
 );
 
@@ -529,33 +516,18 @@ function dailyReward(){
 coins =
 parseInt(coins) + 500;
 
-updateCoins();
+localStorage.setItem(
+"coins",
+coins
+);
 
-showNotification(
+document.getElementById(
+"coins"
+).innerText = coins;
+
+alert(
 "🎁 حصلت على 500 عملة"
 );
-
-}
-
-/* تسجيل دخول */
-
-function login(){
-
-let username =
-prompt("ادخل اسمك");
-
-if(username){
-
-localStorage.setItem(
-"username",
-username
-);
-
-showNotification(
-"👑 أهلاً " + username
-);
-
-}
 
 }
 
@@ -563,90 +535,13 @@ showNotification(
 
 function readManhwa(name){
 
-showNotification(
+alert(
 "📖 جاري قراءة " + name
 );
 
 }
 
-/* لايك */
-
-function likeManhwa(){
-
-showNotification(
-"❤️ تم إضافة لايك"
-);
-
-}
-
-/* بحث */
-
-function searchManhwa(value){
-
-let cards =
-document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-
-let title =
-card.innerText.toLowerCase();
-
-if(title.includes(
-value.toLowerCase()
-)){
-
-card.style.display =
-"block";
-
-}else{
-
-card.style.display =
-"none";
-
-}
-
-});
-
-}
-
-/* زر الأعلى */
-
-window.onscroll = function(){
-
-let topBtn =
-document.getElementById(
-"topBtn"
-);
-
-if(document.body.scrollTop > 300
-|| document.documentElement.scrollTop > 300){
-
-topBtn.style.display =
-"block";
-
-}else{
-
-topBtn.style.display =
-"none";
-
-}
-
-};
-
-function scrollToTop(){
-
-window.scrollTo({
-
-top:0,
-behavior:"smooth"
-
-});
-
-}
-
 </script>
 
-</body>
-</html>
 </body>
 </html>
