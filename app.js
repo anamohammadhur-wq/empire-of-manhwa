@@ -1,50 +1,53 @@
 let coins = 2500;
 
 function updateCoins(){
-  document.getElementById("coins").innerText = coins;
-}
 
-function buyTheme(price){
-
-  if(coins >= price){
-
-    coins -= price;
-
-    updateCoins();
-
-    showNotification("🔥 تم شراء المظهر");
-
-  }else{
-
-    showNotification("❌ لا يوجد نقاط كافية");
-
-  }
-
-}
-
-function dailyReward(){
-
-  coins += 500;
-
-  updateCoins();
-
-  showNotification("🎁 حصلت على 500 نقطة");
+document.getElementById("coins").innerText = coins;
 
 }
 
 function showNotification(text){
 
-  const box = document.getElementById("notification");
+const notification =
+document.getElementById("notification");
 
-  box.innerText = text;
+notification.innerText = text;
 
-  box.style.display = "block";
+notification.style.display = "block";
 
-  setTimeout(()=>{
+setTimeout(()=>{
 
-    box.style.display = "none";
+notification.style.display = "none";
 
-  },3000);
+},3000);
+
+}
+
+function buyTheme(price){
+
+if(coins >= price){
+
+coins -= price;
+
+updateCoins();
+
+showNotification("🔥 تم شراء المظهر");
+
+}else{
+
+showNotification("❌ لا يوجد نقاط كافية");
+
+}
+
+}
+
+function dailyReward(){
+
+coins += 500;
+
+updateCoins();
+
+showNotification("🎁 حصلت على 500 نقطة");
 
 }
 
