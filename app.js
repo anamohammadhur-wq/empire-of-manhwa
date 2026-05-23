@@ -1,3 +1,52 @@
+let coins =
+localStorage.getItem("coins") || 3000;
+
+coins = parseInt(coins);
+
+const coinsElement =
+document.getElementById("coins");
+
+const notification =
+document.getElementById("notification");
+
+updateCoins();
+
+function updateCoins(){
+
+coinsElement.innerText = coins;
+
+localStorage.setItem("coins", coins);
+
+}
+
+function showNotification(text){
+
+notification.innerText = text;
+
+notification.style.display = "block";
+
+setTimeout(()=>{
+
+notification.style.display = "none";
+
+},3000);
+
+}
+
+/* المكافأة اليومية */
+
+function dailyReward(){
+
+coins += 500;
+
+updateCoins();
+
+showNotification("🎁 حصلت على 500 عملة");
+
+}
+
+/* الموسيقى */
+
 let music =
 new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=beautiful-relaxing-music-14437.mp3");
 
@@ -24,5 +73,121 @@ showNotification("🎵 تم تشغيل الموسيقى");
 isPlaying = true;
 
 }
+
+}
+
+/* الشراء */
+
+function buyTheme(price){
+
+if(coins >= price){
+
+coins -= price;
+
+updateCoins();
+
+showNotification("🔥 تم الشراء بنجاح");
+
+}else{
+
+showNotification("❌ لا تملك عملات كافية");
+
+}
+
+}
+
+/* القراءة */
+
+function readManhwa(name){
+
+document.getElementById("reader-title")
+.innerText =
+"📖 جاري قراءة " + name;
+
+window.location.href = "#reader";
+
+showNotification("📚 تم فتح " + name);
+
+}
+
+/* تسجيل الدخول */
+
+function login(){
+
+let username =
+prompt("ادخل اسم المستخدم");
+
+if(username){
+
+document.getElementById("username")
+.innerText = username;
+
+document.getElementById("profile-name")
+.innerText = username;
+
+localStorage.setItem("username", username);
+
+showNotification("🔥 أهلاً " + username);
+
+}
+
+}
+
+const savedUser =
+localStorage.getItem("username");
+
+if(savedUser){
+
+document.getElementById("username")
+.innerText = savedUser;
+
+document.getElementById("profile-name")
+.innerText = savedUser;
+
+}
+
+/* البحث */
+
+function searchManhwa(){
+
+let input =
+document.getElementById("search")
+.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+let title =
+card.querySelector("h3")
+.innerText.toLowerCase();
+
+if(title.includes(input)){
+
+card.style.display = "block";
+
+}else{
+
+card.style.display = "none";
+
+}
+
+});
+
+}
+
+/* عجلة الحظ */
+
+function spinWheel(){
+
+let reward =
+Math.floor(Math.random() * 1000);
+
+coins += reward;
+
+updateCoins();
+
+showNotification("🎡 ربحت " + reward + " عملة!");
 
 }
