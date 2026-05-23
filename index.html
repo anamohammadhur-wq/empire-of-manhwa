@@ -2,63 +2,402 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>امبراطورية المانهو</title>
+<title>☠️ إمبراطورية المانهوا</title>
 
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<header class="navbar">
+<!-- شاشة التحميل -->
+
+<div id="loader">
+
+<h1>
+☠️ إمبراطورية المانهوا
+</h1>
+
+</div>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<a href="#home">🏠</a>
+<a href="#latest">🔥</a>
+<a href="#store">🛒</a>
+<a href="#comments">💬</a>
+<a href="#profile">👑</a>
+
+</div>
+
+<!-- زر الصعود -->
+
+<button id="topBtn" onclick="scrollToTop()">
+⬆️
+</button>
+
+<!-- الخلفية -->
+
+<div class="particles"></div>
+
+<!-- الهيدر -->
+
+<header>
 
 <div class="logo">
-💀 امبراطورية المانهو
+☠️ إمبراطورية المانهوا
 </div>
 
 <nav>
-<a href="#">الرئيسية</a>
-<a href="#">الأحدث</a>
-<a href="#">المتجر</a>
-<a href="#">البروفايل</a>
+
+<a href="#home">الرئيسية</a>
+<a href="#latest">الأحدث</a>
+<a href="#store">المتجر</a>
+<a href="#comments">التعليقات</a>
+<a href="#profile">البروفايل</a>
+
 </nav>
 
 <div class="coins-box">
-<span id="coins">3000</span> 🪙
+
+🪙 <span id="coins">3000</span>
+
 </div>
 
 </header>
 
-<section class="hero">
+<!-- الشريط العلوي -->
 
-<h1>🔥 عالم المانهو الأسطوري</h1>
+<div class="top-bar">
 
-<p>أفضل موقع مانهوا عربي</p>
+<input
+type="text"
+id="search"
+placeholder="ابحث عن مانهوا..."
+onkeyup="searchManhwa()"
+>
+
+<div class="user-profile">
+
+👑 <span id="username">زائر</span>
+
+<button onclick="login()">
+تسجيل دخول
+</button>
+
+</div>
+
+</div>
+
+<!-- الواجهة -->
+
+<section class="hero" id="home">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>
+🔥 عالم المانهوا الأسطوري
+</h1>
+
+<p>
+أفضل موقع مانهوا عربي في المجرة ☠️
+</p>
 
 <div class="hero-buttons">
-
-<button onclick="spinWheel()">
-🎡 عجلة الحظ
-</button>
 
 <button onclick="dailyReward()">
 🎁 مكافأة يومية
 </button>
 
-<button onclick="login()">
-👑 تسجيل دخول
+<button onclick="toggleMusic()">
+🎵 موسيقى
 </button>
+
+<button onclick="spinWheel()">
+🎡 عجلة الحظ
+</button>
+
+</div>
 
 </div>
 
 </section>
 
+<!-- أحدث الفصول -->
+
+<section class="section" id="latest">
+
+<h2>
+🔥 أحدث الفصول
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://picsum.photos/400/500?1">
+
+<div class="card-content">
+
+<h3>Solo Leveling</h3>
+
+<p>
+الفصل 201
+</p>
+
+<div class="likes">
+❤️ 25K
+</div>
+
+<div class="card-buttons">
+
+<button onclick="readManhwa('Solo Leveling')">
+📖 قراءة
+</button>
+
+<button onclick="addFavorite('Solo Leveling')">
+❤️
+</button>
+
+</div>
+
+<div class="views">
+👁️ 2.5M مشاهدة
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://picsum.photos/400/500?2">
+
+<div class="card-content">
+
+<h3>Nano Machine</h3>
+
+<p>
+الفصل 180
+</p>
+
+<div class="likes">
+❤️ 18K
+</div>
+
+<div class="card-buttons">
+
+<button onclick="readManhwa('Nano Machine')">
+📖 قراءة
+</button>
+
+<button onclick="addFavorite('Nano Machine')">
+❤️
+</button>
+
+</div>
+
+<div class="views">
+👁️ 1.8M مشاهدة
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://picsum.photos/400/500?3">
+
+<div class="card-content">
+
+<h3>TBATE</h3>
+
+<p>
+الفصل 170
+</p>
+
+<div class="likes">
+❤️ 30K
+</div>
+
+<div class="card-buttons">
+
+<button onclick="readManhwa('TBATE')">
+📖 قراءة
+</button>
+
+<button onclick="addFavorite('TBATE')">
+❤️
+</button>
+
+</div>
+
+<div class="views">
+👁️ 3M مشاهدة
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- المتجر -->
+
+<section class="section" id="store">
+
+<h2>
+🛒 متجر المظاهر
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>
+🌌 Neon Theme
+</h3>
+
+<p>
+1000 🪙
+</p>
+
+<button onclick="activateTheme('neon')">
+شراء
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>
+🩸 Blood Theme
+</h3>
+
+<p>
+1500 🪙
+</p>
+
+<button onclick="activateTheme('blood')">
+شراء
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- البروفايل -->
+
+<section class="section" id="profile">
+
+<h2>
+👑 البروفايل
+</h2>
+
+<div class="profile-card">
+
+<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
+<h3 id="profile-name">
+ملك المانهوا
+</h3>
+
+<p>
+LVL 99 ☠️
+</p>
+
+<p>
+XP: 999999
+</p>
+
+<div class="level-bar">
+
+<div class="level-fill"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- التعليقات -->
+
+<section class="section" id="comments">
+
+<h2>
+💬 التعليقات
+</h2>
+
+<div class="comment-box">
+
+<input
+type="text"
+id="comment-input"
+placeholder="اكتب تعليق..."
+>
+
+<button onclick="addComment()">
+إرسال
+</button>
+
+</div>
+
+<div id="comments-container">
+
+</div>
+
+</section>
+
+<!-- القارئ -->
+
+<section class="section" id="reader">
+
+<h2 id="reader-title">
+📖 اختر مانهوا للقراءة
+</h2>
+
+<div class="reader-images">
+
+<img src="https://picsum.photos/800/1200?10">
+
+<img src="https://picsum.photos/800/1200?11">
+
+</div>
+
+</section>
+
+<!-- إشعار -->
+
+<div id="notification"></div>
+
 <script src="app.js"></script>
 
 </body>
+
 </html>
-</body>
+</html>
 
 </html>
