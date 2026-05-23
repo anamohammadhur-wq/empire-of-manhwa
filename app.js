@@ -1,92 +1,101 @@
 let coins = localStorage.getItem("coins");
 
-if(!coins){
-coins = 2500;
+if (!coins) {
+  coins = 2500;
 }
 
 coins = parseInt(coins);
 
-updateCoins();
+const coinsElement = document.getElementById("coins");
 
-function updateCoins(){
-
-document.getElementById("coins").innerText = coins;
-
-localStorage.setItem("coins", coins);
-
+function updateCoins() {
+  coinsElement.innerText = coins;
+  localStorage.setItem("coins", coins);
 }
-
-function showNotification(text){
-
-const notification =
-document.getElementById("notification");
-
-notification.innerText = text;
-
-notification.style.display = "block";
-
-setTimeout(()=>{
-
-notification.style.display = "none";
-
-},3000);
-
-}
-
-function buyTheme(price){
-
-if(coins >= price){
-
-coins -= price;
 
 updateCoins();
 
-showNotification("🔥 تم شراء العنصر");
+function showNotification(text) {
 
-}else{
+  const notification =
+    document.getElementById("notification");
 
-showNotification("❌ نقاط غير كافية");
+  notification.innerText = text;
 
-}
+  notification.style.display = "block";
 
-}
+  setTimeout(() => {
 
-function dailyReward(){
+    notification.style.display = "none";
 
-coins += 500;
-
-updateCoins();
-
-showNotification("🎁 حصلت على 500 نقطة");
+  }, 3000);
 
 }
 
-function readManga(name){
+function buyTheme(price) {
 
-document.getElementById("reader-title")
-.innerText = "📖 " + name;
+  if (coins >= price) {
 
-window.location.href = "#reader";
+    coins -= price;
 
-showNotification("📚 جاري فتح " + name);
+    updateCoins();
+
+    showNotification("🔥 تم الشراء بنجاح");
+
+  } else {
+
+    showNotification("❌ لا يوجد نقاط كافية");
+
+  }
 
 }
 
-function toggleTheme(){
+function dailyReward() {
 
-document.body.classList.toggle("light-mode");
+  coins += 500;
 
-showNotification("🌙 تم تغيير الثيم");
+  updateCoins();
+
+  showNotification("🎁 حصلت على 500 نقطة");
 
 }
 
-function playMusic(){
+function readManga(name) {
 
-const music =
-document.getElementById("bgmusic");
+  showNotification("📖 جاري فتح " + name);
 
-music.play();
+  const readerTitle =
+    document.getElementById("reader-title");
 
+  if (readerTitle) {
+
+    readerTitle.innerText =
+      "📖 " + name;
+
+  }
+
+  location.href = "#reader";
+
+}
+
+function toggleTheme() {
+
+  document.body.classList.toggle("light-mode");
+
+  showNotification("🌙 تم تغيير الثيم");
+
+}
+
+function playMusic() {
+
+  const music =
+    document.getElementById("bgmusic");
+
+  music.play();
+
+  showNotification("🎵 تم تشغيل الموسيقى");
+
+}
 showNotification("🎵 تم تشغيل الموسيقى");
 
 }
