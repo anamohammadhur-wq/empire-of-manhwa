@@ -10,6 +10,8 @@
 
 <link rel="stylesheet" href="style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -24,6 +26,10 @@
 
 </div>
 
+<!-- خلفية متحركة -->
+
+<div class="particles"></div>
+
 <!-- الهيدر -->
 
 <header>
@@ -37,6 +43,7 @@
 <a href="#home">الرئيسية</a>
 <a href="#latest">الأحدث</a>
 <a href="#store">المتجر</a>
+<a href="#comments">التعليقات</a>
 <a href="#profile">البروفايل</a>
 
 </nav>
@@ -72,7 +79,7 @@ onkeyup="searchManhwa()"
 
 </div>
 
-<!-- الواجهة الرئيسية -->
+<!-- الواجهة -->
 
 <section class="hero" id="home">
 
@@ -85,7 +92,7 @@ onkeyup="searchManhwa()"
 </h1>
 
 <p>
-أقوى موقع مانهوا عربي على الإطلاق
+أفضل موقع مانهوا عربي في المجرة ☠️
 </p>
 
 <div class="hero-buttons">
@@ -120,11 +127,19 @@ onkeyup="searchManhwa()"
 
 <div class="card">
 
-<img src="https://picsum.photos/300/400?1">
+<img src="https://picsum.photos/400/500?1">
+
+<div class="card-content">
 
 <h3>Solo Leveling</h3>
 
-<p>الفصل 201</p>
+<p>
+الفصل 201
+</p>
+
+<div class="likes">
+❤️ 25K
+</div>
 
 <button onclick="readManhwa('Solo Leveling')">
 قراءة
@@ -132,13 +147,23 @@ onkeyup="searchManhwa()"
 
 </div>
 
+</div>
+
 <div class="card">
 
-<img src="https://picsum.photos/300/400?2">
+<img src="https://picsum.photos/400/500?2">
+
+<div class="card-content">
 
 <h3>Nano Machine</h3>
 
-<p>الفصل 180</p>
+<p>
+الفصل 180
+</p>
+
+<div class="likes">
+❤️ 18K
+</div>
 
 <button onclick="readManhwa('Nano Machine')">
 قراءة
@@ -146,17 +171,29 @@ onkeyup="searchManhwa()"
 
 </div>
 
+</div>
+
 <div class="card">
 
-<img src="https://picsum.photos/300/400?3">
+<img src="https://picsum.photos/400/500?3">
+
+<div class="card-content">
 
 <h3>TBATE</h3>
 
-<p>الفصل 170</p>
+<p>
+الفصل 170
+</p>
+
+<div class="likes">
+❤️ 30K
+</div>
 
 <button onclick="readManhwa('TBATE')">
 قراءة
 </button>
+
+</div>
 
 </div>
 
@@ -176,6 +213,8 @@ onkeyup="searchManhwa()"
 
 <div class="card">
 
+<div class="card-content">
+
 <h3>
 🌌 Neon Theme
 </h3>
@@ -184,13 +223,17 @@ onkeyup="searchManhwa()"
 1000 🪙
 </p>
 
-<button onclick="buyTheme(1000)">
+<button onclick="activateTheme('neon')">
 شراء
 </button>
 
 </div>
 
+</div>
+
 <div class="card">
+
+<div class="card-content">
 
 <h3>
 🩸 Blood Theme
@@ -200,9 +243,11 @@ onkeyup="searchManhwa()"
 1500 🪙
 </p>
 
-<button onclick="buyTheme(1500)">
+<button onclick="activateTheme('blood')">
 شراء
 </button>
+
+</div>
 
 </div>
 
@@ -227,12 +272,40 @@ onkeyup="searchManhwa()"
 </h3>
 
 <p>
-المستوى: Legendary ☠️
+LVL 99 ☠️
 </p>
 
 <p>
-XP: 9999
+XP: 999999
 </p>
+
+</div>
+
+</section>
+
+<!-- التعليقات -->
+
+<section class="section" id="comments">
+
+<h2>
+💬 التعليقات
+</h2>
+
+<div class="comment-box">
+
+<input
+type="text"
+id="comment-input"
+placeholder="اكتب تعليق..."
+>
+
+<button onclick="addComment()">
+إرسال
+</button>
+
+</div>
+
+<div id="comments-container">
 
 </div>
 
@@ -246,6 +319,13 @@ XP: 9999
 📖 اختر مانهوا للقراءة
 </h2>
 
+<div class="reader-images">
+
+<img src="https://picsum.photos/800/1200?10">
+<img src="https://picsum.photos/800/1200?11">
+
+</div>
+
 </section>
 
 <!-- إشعار -->
@@ -257,6 +337,5 @@ XP: 9999
 </body>
 
 </html>
-</body>
 
 </html>
