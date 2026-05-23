@@ -33,7 +33,7 @@ notification.style.display = "none";
 
 }
 
-/* المكافأة اليومية */
+/* المكافأة */
 
 function dailyReward(){
 
@@ -76,23 +76,18 @@ isPlaying = true;
 
 }
 
-/* الشراء */
+/* عجلة الحظ */
 
-function buyTheme(price){
+function spinWheel(){
 
-if(coins >= price){
+let reward =
+Math.floor(Math.random() * 1000);
 
-coins -= price;
+coins += reward;
 
 updateCoins();
 
-showNotification("🔥 تم الشراء بنجاح");
-
-}else{
-
-showNotification("❌ لا تملك عملات كافية");
-
-}
+showNotification("🎡 ربحت " + reward + " عملة!");
 
 }
 
@@ -177,16 +172,49 @@ card.style.display = "none";
 
 }
 
-/* عجلة الحظ */
+/* الثيمات */
 
-function spinWheel(){
+function activateTheme(theme){
 
-let reward =
-Math.floor(Math.random() * 1000);
+document.body.classList.remove("neon");
+document.body.classList.remove("blood");
 
-coins += reward;
+document.body.classList.add(theme);
 
-updateCoins();
+showNotification("🎨 تم تفعيل الثيم");
+
+}
+
+/* التعليقات */
+
+function addComment(){
+
+let input =
+document.getElementById("comment-input");
+
+let text = input.value;
+
+if(text.trim() !== ""){
+
+let comment =
+document.createElement("div");
+
+comment.classList.add("comment");
+
+comment.innerHTML =
+"👑 " + text;
+
+document
+.getElementById("comments-container")
+.prepend(comment);
+
+input.value = "";
+
+showNotification("💬 تم إضافة التعليق");
+
+}
+
+}
 
 showNotification("🎡 ربحت " + reward + " عملة!");
 
