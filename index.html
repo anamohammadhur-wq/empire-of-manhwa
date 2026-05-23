@@ -3,223 +3,266 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>إمبراطورية المانهو</title>
+<title>☠️ إمبراطورية المانهوا</title>
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-  <audio id="bgmusic" loop>
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
-  </audio>
+<header>
 
-  <nav>
+<div class="logo">
+☠️ إمبراطورية المانهوا
+</div>
 
-    <div class="logo">
-      ☠️ إمبراطورية المانهو
-    </div>
+<nav>
 
-    <ul>
+<a href="#home">الرئيسية</a>
 
-      <li><a href="#">الرئيسية</a></li>
+<a href="#latest">الأحدث</a>
 
-      <li><a href="#latest">الأحدث</a></li>
+<a href="#popular">الأكثر مشاهدة</a>
 
-      <li><a href="#popular">الأكثر مشاهدة</a></li>
+<a href="#store">المتجر</a>
 
-      <li><a href="#store">المتجر</a></li>
+<a href="#profile">البروفايل</a>
 
-    </ul>
+</nav>
 
-    <div class="coins-box">
+<div class="coins-box">
+🪙 <span id="coins">3000</span>
+</div>
 
-      <span id="coins">2500</span> 🪙
+</header>
 
-    </div>
+<!-- الشريط العلوي -->
 
-  </nav>
+<div class="top-bar">
 
-  <header>
+<input
+type="text"
+id="search"
+placeholder="ابحث عن مانهوا..."
+onkeyup="searchManhwa()"
+>
 
-    <div class="hero-content">
+<div class="user-profile">
 
-      <h1>🔥 إمبراطورية المانهو</h1>
+👑 <span id="username">زائر</span>
 
-      <p>أفضل موقع مانهوا عربي أسطوري</p>
+<button onclick="login()">
+تسجيل دخول
+</button>
 
-      <div class="buttons">
+</div>
 
-        <button onclick="playMusic()">
-          🎵 تشغيل الموسيقى
-        </button>
+</div>
 
-        <button onclick="dailyReward()">
-          🎁 مكافأة يومية
-        </button>
+<!-- الواجهة الرئيسية -->
 
-        <button onclick="toggleTheme()">
-          🌙 تغيير الثيم
-        </button>
+<section class="hero" id="home">
 
-      </div>
+<h1>
+🔥 إمبراطورية المانهوا
+</h1>
 
-    </div>
+<p>
+أفضل موقع مانهوا عربي أسطوري
+</p>
 
-  </header>
+<div class="hero-buttons">
 
-  <!-- أحدث الفصول -->
+<button onclick="dailyReward()">
+🎁 مكافأة يومية
+</button>
 
-  <section class="manga-section" id="latest">
+<button onclick="toggleMusic()">
+🎵 تشغيل الموسيقى
+</button>
 
-    <h2>🔥 أحدث الفصول</h2>
+</div>
 
-    <div class="manga-grid">
+</section>
 
-      <div class="card">
+<!-- أحدث الفصول -->
 
-        <img src="https://picsum.photos/400/600?random=1">
+<section class="section" id="latest">
 
-        <h3>Solo Leveling</h3>
+<h2>
+🔥 أحدث الفصول
+</h2>
 
-        <p>الفصل 200</p>
+<div class="cards">
 
-        <button onclick="readManga('Solo Leveling')">
-          قراءة
-        </button>
+<div class="card">
 
-      </div>
+<img src="https://picsum.photos/300/400?1">
 
-      <div class="card">
+<h3>Solo Leveling</h3>
 
-        <img src="https://picsum.photos/400/600?random=2">
+<p>الفصل 201</p>
 
-        <h3>Omniscient Reader</h3>
+<button onclick="readManhwa('Solo Leveling')">
+قراءة
+</button>
 
-        <p>الفصل 150</p>
+</div>
 
-        <button onclick="readManga('Omniscient Reader')">
-          قراءة
-        </button>
+<div class="card">
 
-      </div>
+<img src="https://picsum.photos/300/400?2">
 
-      <div class="card">
+<h3>Omniscient Reader</h3>
 
-        <img src="https://picsum.photos/400/600?random=3">
+<p>الفصل 150</p>
 
-        <h3>Nano Machine</h3>
+<button onclick="readManhwa('Omniscient Reader')">
+قراءة
+</button>
 
-        <p>الفصل 180</p>
+</div>
 
-        <button onclick="readManga('Nano Machine')">
-          قراءة
-        </button>
+<div class="card">
 
-      </div>
+<img src="https://picsum.photos/300/400?3">
 
-    </div>
+<h3>Nano Machine</h3>
 
-  </section>
+<p>الفصل 180</p>
 
-  <!-- الأكثر مشاهدة -->
+<button onclick="readManhwa('Nano Machine')">
+قراءة
+</button>
 
-  <section class="manga-section" id="popular">
+</div>
 
-    <h2>⭐ الأكثر مشاهدة</h2>
+</div>
 
-    <div class="manga-grid">
+</section>
 
-      <div class="card">
+<!-- الأكثر مشاهدة -->
 
-        <img src="https://picsum.photos/400/600?random=4">
+<section class="section" id="popular">
 
-        <h3>Martial Peak</h3>
+<h2>
+⭐ الأكثر مشاهدة
+</h2>
 
-        <p>12M مشاهدة</p>
+<div class="cards">
 
-        <button onclick="readManga('Martial Peak')">
-          قراءة
-        </button>
+<div class="card">
 
-      </div>
+<img src="https://picsum.photos/300/400?4">
 
-      <div class="card">
+<h3>Martial Peak</h3>
 
-        <img src="https://picsum.photos/400/600?random=5">
+<button onclick="buyTheme(500)">
+شراء بـ 500 🪙
+</button>
 
-        <h3>Legend of Northern Blade</h3>
+</div>
 
-        <p>8M مشاهدة</p>
+<div class="card">
 
-        <button onclick="readManga('Legend of Northern Blade')">
-          قراءة
-        </button>
+<img src="https://picsum.photos/300/400?5">
 
-      </div>
+<h3>The Beginning After The End</h3>
 
-    </div>
+<button onclick="buyTheme(700)">
+شراء بـ 700 🪙
+</button>
 
-  </section>
+</div>
 
-  <!-- المتجر -->
+</div>
 
-  <section class="store" id="store">
+</section>
 
-    <h2>🛒 متجر المظاهر</h2>
+<!-- المتجر -->
 
-    <div class="store-grid">
+<section class="section" id="store">
 
-      <div class="theme-card">
+<h2>
+🛒 متجر المظاهر
+</h2>
 
-        <h3>🔥 الثيم الناري</h3>
+<div class="cards">
 
-        <p>1000 🪙</p>
+<div class="card">
 
-        <button onclick="buyTheme(1000)">
-          شراء
-        </button>
+<h3>
+🔥 وضع النيون
+</h3>
 
-      </div>
+<button onclick="activateTheme('neon')">
+تفعيل
+</button>
 
-      <div class="theme-card">
+</div>
 
-        <h3>🌌 الثيم المظلم</h3>
+<div class="card">
 
-        <p>1500 🪙</p>
+<h3>
+🩸 الوضع الدموي
+</h3>
 
-        <button onclick="buyTheme(1500)">
-          شراء
-        </button>
+<button onclick="activateTheme('blood')">
+تفعيل
+</button>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
-  <!-- القارئ -->
+<!-- البروفايل -->
 
-  <section id="reader" class="reader">
+<section class="section" id="profile">
 
-    <h2 id="reader-title">
-      📖 اختر مانهوا للقراءة
-    </h2>
+<h2>
+👑 البروفايل
+</h2>
 
-  </section>
+<div class="profile-card">
 
-  <!-- الإشعارات -->
+<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
-  <div class="notification" id="notification">
+<h3 id="profile-name">
+ملك المانهوا
+</h3>
 
-  </div>
+<p>
+المستوى: أسطوري ☠️
+</p>
 
-  <script src="app.js"></script>
+</div>
+
+</section>
+
+<!-- القارئ -->
+
+<section class="section" id="reader">
+
+<h2 id="reader-title">
+📖 اختر مانهوا للقراءة
+</h2>
+
+</section>
+
+<!-- الإشعارات -->
+
+<div id="notification">
+
+</div>
+
+<script src="app.js"></script>
 
 </body>
 
