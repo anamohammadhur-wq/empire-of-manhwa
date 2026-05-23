@@ -24,49 +24,42 @@
 
 <nav>
 
-<a href="#">الرئيسية</a>
-<a href="#">الأحدث</a>
-<a href="#">الأكثر مشاهدة</a>
-<a href="#">المتجر</a>
-<a href="#">حسابي</a>
+<a href="#hero">الرئيسية</a>
+<a href="#latest">الأحدث</a>
+<a href="#popular">الأكثر مشاهدة</a>
+<a href="#store">المتجر</a>
 
 </nav>
 
 <div class="coins-box">
-
 🪙 <span id="coins">2500</span>
-
 </div>
 
 </header>
 
-<section class="hero">
+<section class="hero" id="hero">
 
 <div class="overlay"></div>
 
 <div class="hero-content">
 
-<h1>
-امبراطورية المانهوا
-</h1>
+<h1>أفضل موقع مانهوا عربي</h1>
 
 <p>
-اقرأ أفضل المانهوا العربية بجودة عالية
+اقرأ أحدث الفصول واستمتع بالمانهوا الأسطورية
 </p>
 
 <button onclick="dailyReward()">
-🎁 استلام المكافأة اليومية
+🎁 المكافأة اليومية
 </button>
 
 </div>
 
 </section>
 
-<section class="latest">
+<section class="latest" id="latest">
 
-<h2>
-🔥 أحدث الفصول
-</h2>
+<h2>🔥 أحدث الفصول</h2>
 
 <div class="manga-grid">
 
@@ -78,11 +71,9 @@
 
 <h3>Solo Leveling</h3>
 
-<p>
-الفصل 201
-</p>
+<p>الفصل 201</p>
 
-<button>
+<button onclick="readManga('Solo Leveling')">
 قراءة
 </button>
 
@@ -98,11 +89,9 @@
 
 <h3>Omniscient Reader</h3>
 
-<p>
-الفصل 250
-</p>
+<p>الفصل 250</p>
 
-<button>
+<button onclick="readManga('Omniscient Reader')">
 قراءة
 </button>
 
@@ -118,17 +107,25 @@
 
 <h3>The Beginning After The End</h3>
 
-<p>
-الفصل 180
-</p>
+<p>الفصل 180</p>
 
-<button>
+<button onclick="readManga('TBATE')">
 قراءة
 </button>
 
 </div>
 
 </div>
+
+</div>
+
+</section>
+
+<section class="popular" id="popular">
+
+<h2>⭐ الأكثر مشاهدة</h2>
+
+<div class="manga-grid">
 
 <div class="card">
 
@@ -138,11 +135,27 @@
 
 <h3>ملك السيف</h3>
 
-<p>
-الفصل 55
-</p>
+<p>🔥 ترند الأسبوع</p>
 
-<button>
+<button onclick="readManga('ملك السيف')">
+قراءة
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://i.imgur.com/JqT2VhP.jpg">
+
+<div class="info">
+
+<h3>Nano Machine</h3>
+
+<p>🔥 1M مشاهدة</p>
+
+<button onclick="readManga('Nano Machine')">
 قراءة
 </button>
 
@@ -154,29 +167,23 @@
 
 </section>
 
-<section class="store">
+<section class="store" id="store">
 
-<h2>
-🛒 متجر المظاهر
-</h2>
+<h2>🛒 متجر المظاهر</h2>
 
 <div class="manga-grid">
 
 <div class="card">
 
-<img src="https://i.imgur.com/JqT2VhP.jpg">
+<img src="https://i.imgur.com/z5q6y6M.jpg">
 
 <div class="info">
 
-<h3>
-مظهر الظل
-</h3>
+<h3>مظهر التنين</h3>
 
-<p>
-500 نقطة
-</p>
+<p>1000 نقطة</p>
 
-<button onclick="buyTheme(500)">
+<button onclick="buyTheme(1000)">
 شراء
 </button>
 
@@ -186,19 +193,15 @@
 
 <div class="card">
 
-<img src="https://i.imgur.com/z5q6y6M.jpg">
+<img src="https://i.imgur.com/JqT2VhP.jpg">
 
 <div class="info">
 
-<h3>
-مظهر التنين
-</h3>
+<h3>مظهر الظل</h3>
 
-<p>
-1000 نقطة
-</p>
+<p>500 نقطة</p>
 
-<button onclick="buyTheme(1000)">
+<button onclick="buyTheme(500)">
 شراء
 </button>
 
@@ -210,18 +213,32 @@
 
 </section>
 
+<section class="reader" id="reader">
+
+<h2 id="reader-title">
+📖 قارئ المانهوا
+</h2>
+
+<div class="chapter-images">
+
+<img src="https://i.imgur.com/q6Y6Mjp.jpeg">
+<img src="https://i.imgur.com/WKQpK8K.jpeg">
+<img src="https://i.imgur.com/Uw7P9fM.jpeg">
+
+</div>
+
+</section>
+
 <footer>
 
 <p>
-© 2026 جميع الحقوق محفوظة - امبراطورية المانهوا
+© 2026 امبراطورية المانهوا
 </p>
 
 </footer>
 
 <div class="notification" id="notification">
-
 🔥 تم الشراء بنجاح
-
 </div>
 
 <script src="app.js"></script>
