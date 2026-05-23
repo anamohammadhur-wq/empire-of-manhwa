@@ -10,13 +10,9 @@ function updateCoins() {
 
 updateCoins();
 
-/* إشعارات */
-
 function showNotification(text) {
   alert(text);
 }
-
-/* موسيقى */
 
 let music = new Audio(
   "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=beautiful-relaxing-music-14437.mp3"
@@ -32,7 +28,7 @@ function toggleMusic() {
 
     music.pause();
 
-    showNotification("🔇 تم إيقاف الموسيقى");
+    alert("🔇 تم إيقاف الموسيقى");
 
     isPlaying = false;
 
@@ -40,7 +36,7 @@ function toggleMusic() {
 
     music.play();
 
-    showNotification("🎵 تم تشغيل الموسيقى");
+    alert("🎵 تم تشغيل الموسيقى");
 
     isPlaying = true;
 
@@ -48,19 +44,15 @@ function toggleMusic() {
 
 }
 
-/* مكافأة */
-
 function dailyReward() {
 
   coins += 500;
 
   updateCoins();
 
-  showNotification("🎁 حصلت على 500 عملة");
+  alert("🎁 حصلت على 500 عملة");
 
 }
-
-/* عجلة الحظ */
 
 function spinWheel() {
 
@@ -70,11 +62,9 @@ function spinWheel() {
 
   updateCoins();
 
-  showNotification("🎡 ربحت " + reward + " عملة");
+  alert("🎡 ربحت " + reward + " عملة");
 
 }
-
-/* تسجيل الدخول */
 
 function login() {
 
@@ -84,13 +74,11 @@ function login() {
 
     localStorage.setItem("username", username);
 
-    showNotification("👑 أهلاً " + username);
+    alert("👑 أهلاً " + username);
 
   }
 
 }
-
-/* قراءة */
 
 function readManhwa(name) {
 
@@ -108,7 +96,7 @@ function readManhwa(name) {
 
   else {
 
-    showNotification("📚 قريبًا");
+    alert("📚 قريبًا");
 
   }
 
