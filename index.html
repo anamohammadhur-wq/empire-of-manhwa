@@ -2,329 +2,175 @@
 <html lang="ar" dir="rtl">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إمبراطورية المانهو</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>☠️ امبراطورية المانهوا</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
-
-<script src="https://kit.fontawesome.com/a2d9d6a64f.js" crossorigin="anonymous"></script>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="background-animation"></div>
+  <audio id="bgmusic" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
+  </audio>
 
-<header>
+  <nav>
 
-<div class="logo">
-☠️ امبراطورية المانهوا
-</div>
+    <div class="logo">
+      ☠️ امبراطورية المانهو
+    </div>
 
-<nav>
+    <ul>
 
-<a href="#home">الرئيسية</a>
-<a href="#latest">الأحدث</a>
-<a href="#popular">الأكثر مشاهدة</a>
-<a href="#store">المتجر</a>
-<a href="#profile">البروفايل</a>
+      <li><a href="#">الرئيسية</a></li>
 
-</nav>
+      <li><a href="#latest">الأحدث</a></li>
 
-<div class="top-icons">
+      <li><a href="#popular">الأكثر مشاهدة</a></li>
 
-<div class="coins-box">
-🪙 <span id="coins">2500</span>
-</div>
+      <li><a href="#store">المتجر</a></li>
 
-<button class="theme-btn" onclick="toggleTheme()">
-🌙
-</button>
+    </ul>
 
-</div>
+    <div class="coins-box">
+      <span id="coins">2500</span> 🪙
+    </div>
 
-</header>
+  </nav>
 
-<section class="hero" id="home">
+  <header>
 
-<div class="overlay"></div>
+    <div class="overlay"></div>
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<h1>
-🔥 امبراطورية المانهوا
-</h1>
+      <h1>🔥 إمبراطورية المانهو</h1>
 
-<p>
-أفضل موقع مانهوا عربي أسطوري
-</p>
+      <p>أفضل موقع مانهوا عربي أسطوري</p>
 
-<div class="hero-buttons">
+      <div class="buttons">
 
-<button onclick="dailyReward()">
-🎁 مكافأة يومية
-</button>
+        <button onclick="playMusic()">
+          🎵 تشغيل الموسيقى
+        </button>
 
-<button onclick="playMusic()">
-🎵 تشغيل الموسيقى
-</button>
+        <button onclick="dailyReward()">
+          🎁 مكافأة يومية
+        </button>
 
-</div>
+        <button onclick="toggleTheme()">
+          🌙 تغيير الثيم
+        </button>
 
-</div>
+      </div>
 
-</section>
+    </div>
 
-<section class="slider">
+  </header>
 
-<div class="slide-track">
+  <section class="manga-section" id="latest">
 
-<img src="https://i.imgur.com/q6Y6Mjp.jpeg">
-<img src="https://i.imgur.com/WKQpK8K.jpeg">
-<img src="https://i.imgur.com/Uw7P9fM.jpeg">
-<img src="https://i.imgur.com/JqT2VhP.jpg">
-<img src="https://i.imgur.com/z5q6y6M.jpg">
+    <h2>📖 أحدث الفصول</h2>
 
-</div>
+    <div class="manga-grid">
 
-</section>
+      <div class="card">
 
-<section class="latest" id="latest">
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop">
 
-<h2>
-🔥 أحدث الفصول
-</h2>
+        <h3>Solo Leveling</h3>
 
-<div class="manga-grid">
+        <p>الفصل 200</p>
 
-<div class="card">
+        <button onclick="readManga('Solo Leveling')">
+          قراءة
+        </button>
 
-<img src="https://i.imgur.com/q6Y6Mjp.jpeg">
+      </div>
 
-<div class="info">
+      <div class="card">
 
-<h3>Solo Leveling</h3>
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop">
 
-<p>الفصل 201</p>
+        <h3>Omniscient Reader</h3>
 
-<div class="stats">
-❤️ 15K | 👁️ 1.2M
-</div>
+        <p>الفصل 150</p>
 
-<button onclick="readManga('Solo Leveling')">
-قراءة
-</button>
+        <button onclick="readManga('Omniscient Reader')">
+          قراءة
+        </button>
 
-</div>
+      </div>
 
-</div>
+      <div class="card">
 
-<div class="card">
+        <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1200&auto=format&fit=crop">
 
-<img src="https://i.imgur.com/WKQpK8K.jpeg">
+        <h3>Nano Machine</h3>
 
-<div class="info">
+        <p>الفصل 180</p>
 
-<h3>Omniscient Reader</h3>
+        <button onclick="readManga('Nano Machine')">
+          قراءة
+        </button>
 
-<p>الفصل 250</p>
+      </div>
 
-<div class="stats">
-❤️ 12K | 👁️ 980K
-</div>
+    </div>
 
-<button onclick="readManga('Omniscient Reader')">
-قراءة
-</button>
+  </section>
 
-</div>
+  <section class="store" id="store">
 
-</div>
+    <h2>🛒 متجر المظاهر</h2>
 
-<div class="card">
+    <div class="store-grid">
 
-<img src="https://i.imgur.com/Uw7P9fM.jpeg">
+      <div class="theme-card">
 
-<div class="info">
+        <h3>🔥 الثيم الناري</h3>
 
-<h3>TBATE</h3>
+        <p>1000 🪙</p>
 
-<p>الفصل 180</p>
+        <button onclick="buyTheme(1000)">
+          شراء
+        </button>
 
-<div class="stats">
-❤️ 20K | 👁️ 2M
-</div>
+      </div>
 
-<button onclick="readManga('TBATE')">
-قراءة
-</button>
+      <div class="theme-card">
 
-</div>
+        <h3>🌌 الثيم المظلم</h3>
 
-</div>
+        <p>1500 🪙</p>
 
-</div>
+        <button onclick="buyTheme(1500)">
+          شراء
+        </button>
 
-</section>
+      </div>
 
-<section class="popular" id="popular">
+    </div>
 
-<h2>
-⭐ الأكثر مشاهدة
-</h2>
+  </section>
 
-<div class="manga-grid">
+  <section id="reader" class="reader">
 
-<div class="card">
+    <h2 id="reader-title">
+      📖 اختر مانهوا للقراءة
+    </h2>
 
-<img src="https://i.imgur.com/JqT2VhP.jpg">
+  </section>
 
-<div class="info">
+  <div class="notification" id="notification">
 
-<h3>Nano Machine</h3>
+  </div>
 
-<p>🔥 ترند</p>
+  <script src="app.js"></script>
 
-<button onclick="readManga('Nano Machine')">
-قراءة
-</button>
+</body>
 
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://i.imgur.com/z5q6y6M.jpg">
-
-<div class="info">
-
-<h3>ملك السيف</h3>
-
-<p>🔥 1M مشاهدة</p>
-
-<button onclick="readManga('ملك السيف')">
-قراءة
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="store" id="store">
-
-<h2>
-🛒 متجر المظاهر
-</h2>
-
-<div class="manga-grid">
-
-<div class="card">
-
-<img src="https://i.imgur.com/JqT2VhP.jpg">
-
-<div class="info">
-
-<h3>VIP Shadow</h3>
-
-<p>1000 نقطة</p>
-
-<button onclick="buyTheme(1000)">
-شراء
-</button>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://i.imgur.com/z5q6y6M.jpg">
-
-<div class="info">
-
-<h3>Dragon Aura</h3>
-
-<p>1500 نقطة</p>
-
-<button onclick="buyTheme(1500)">
-شراء
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="profile" id="profile">
-
-<h2>
-👑 البروفايل
-</h2>
-
-<div class="profile-box">
-
-<img src="https://i.imgur.com/6VBx3io.png">
-
-<h3>ملك المانهوا</h3>
-
-<p>
-المستوى: 25 ⚡
-</p>
-
-<p>
-VIP عضو
-</p>
-
-</div>
-
-</section>
-
-<section class="reader" id="reader">
-
-<h2 id="reader-title">
-📖 قارئ المانهوا
-</h2>
-
-<div class="chapter-images">
-
-<img src="https://i.imgur.com/q6Y6Mjp.jpeg">
-<img src="https://i.imgur.com/WKQpK8K.jpeg">
-<img src="https://i.imgur.com/Uw7P9fM.jpeg">
-
-</div>
-
-</section>
-
-<footer>
-
-<p>
-© 2026 امبراطورية المانهوا ☠️
-</p>
-
-</footer>
-
-<div class="notification" id="notification">
-🔥 إشعار
-</div>
-
-<audio id="bgmusic" loop>
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
-</audio>
-
-<script src="app.js"></script>
-
+</html>
 </body>
 </html>
