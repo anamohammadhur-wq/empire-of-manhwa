@@ -1,4 +1,7 @@
-let coins = 3000;
+let coins =
+localStorage.getItem("coins") || 3000;
+
+coins = parseInt(coins);
 
 const coinsElement =
 document.getElementById("coins");
@@ -12,6 +15,8 @@ function updateCoins(){
 
 coinsElement.innerText = coins;
 
+localStorage.setItem("coins", coins);
+
 }
 
 function showNotification(text){
@@ -20,7 +25,7 @@ notification.innerText = text;
 
 notification.style.display = "block";
 
-setTimeout(() => {
+setTimeout(()=>{
 
 notification.style.display = "none";
 
@@ -78,5 +83,62 @@ function readManhwa(name){
 showNotification("📖 جاري فتح " + name);
 
 window.location.href = "#reader";
+
+}
+
+function login(){
+
+let username =
+prompt("ادخل اسم المستخدم");
+
+if(username){
+
+document.getElementById("username")
+.innerText = username;
+
+localStorage.setItem("username", username);
+
+showNotification("🔥 أهلاً " + username);
+
+}
+
+}
+
+const savedUser =
+localStorage.getItem("username");
+
+if(savedUser){
+
+document.getElementById("username")
+.innerText = savedUser;
+
+}
+
+function searchManhwa(){
+
+let input =
+document.getElementById("search")
+.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+let title =
+card.querySelector("h3")
+.innerText.toLowerCase();
+
+if(title.includes(input)){
+
+card.style.display = "block";
+
+}else{
+
+card.style.display = "none";
+
+}
+
+});
 
 }
