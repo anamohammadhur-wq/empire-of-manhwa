@@ -1,8 +1,20 @@
-let coins = 2500;
+let coins = localStorage.getItem("coins");
+
+if(!coins){
+
+coins = 2500;
+
+}
+
+coins = parseInt(coins);
+
+updateCoins();
 
 function updateCoins(){
 
 document.getElementById("coins").innerText = coins;
+
+localStorage.setItem("coins", coins);
 
 }
 
@@ -31,7 +43,7 @@ coins -= price;
 
 updateCoins();
 
-showNotification("🔥 تم شراء المظهر");
+showNotification("🔥 تم الشراء بنجاح");
 
 }else{
 
@@ -51,4 +63,13 @@ showNotification("🎁 حصلت على 500 نقطة");
 
 }
 
-updateCoins();
+function readManga(name){
+
+document.getElementById("reader-title").innerText =
+"📖 " + name;
+
+window.location.href = "#reader";
+
+showNotification("📚 تم فتح " + name);
+
+}
