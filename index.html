@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>امبراطورية المانهوا</title>
+<title>☠️ امبراطورية المانهوا</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -18,7 +18,7 @@
 
 <body>
 
-<div class="particles"></div>
+<div class="background-animation"></div>
 
 <header>
 
@@ -36,9 +36,295 @@
 
 </nav>
 
-<div class="user-box">
+<div class="top-icons">
 
-🪙
+<div class="coins-box">
+🪙 <span id="coins">2500</span>
+</div>
+
+<button class="theme-btn" onclick="toggleTheme()">
+🌙
+</button>
+
+</div>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>
+🔥 امبراطورية المانهوا
+</h1>
+
+<p>
+أفضل موقع مانهوا عربي أسطوري
+</p>
+
+<div class="hero-buttons">
+
+<button onclick="dailyReward()">
+🎁 مكافأة يومية
+</button>
+
+<button onclick="playMusic()">
+🎵 تشغيل الموسيقى
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="slider">
+
+<div class="slide-track">
+
+<img src="https://i.imgur.com/q6Y6Mjp.jpeg">
+<img src="https://i.imgur.com/WKQpK8K.jpeg">
+<img src="https://i.imgur.com/Uw7P9fM.jpeg">
+<img src="https://i.imgur.com/JqT2VhP.jpg">
+<img src="https://i.imgur.com/z5q6y6M.jpg">
+
+</div>
+
+</section>
+
+<section class="latest" id="latest">
+
+<h2>
+🔥 أحدث الفصول
+</h2>
+
+<div class="manga-grid">
+
+<div class="card">
+
+<img src="https://i.imgur.com/q6Y6Mjp.jpeg">
+
+<div class="info">
+
+<h3>Solo Leveling</h3>
+
+<p>الفصل 201</p>
+
+<div class="stats">
+❤️ 15K | 👁️ 1.2M
+</div>
+
+<button onclick="readManga('Solo Leveling')">
+قراءة
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://i.imgur.com/WKQpK8K.jpeg">
+
+<div class="info">
+
+<h3>Omniscient Reader</h3>
+
+<p>الفصل 250</p>
+
+<div class="stats">
+❤️ 12K | 👁️ 980K
+</div>
+
+<button onclick="readManga('Omniscient Reader')">
+قراءة
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://i.imgur.com/Uw7P9fM.jpeg">
+
+<div class="info">
+
+<h3>TBATE</h3>
+
+<p>الفصل 180</p>
+
+<div class="stats">
+❤️ 20K | 👁️ 2M
+</div>
+
+<button onclick="readManga('TBATE')">
+قراءة
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="popular" id="popular">
+
+<h2>
+⭐ الأكثر مشاهدة
+</h2>
+
+<div class="manga-grid">
+
+<div class="card">
+
+<img src="https://i.imgur.com/JqT2VhP.jpg">
+
+<div class="info">
+
+<h3>Nano Machine</h3>
+
+<p>🔥 ترند</p>
+
+<button onclick="readManga('Nano Machine')">
+قراءة
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://i.imgur.com/z5q6y6M.jpg">
+
+<div class="info">
+
+<h3>ملك السيف</h3>
+
+<p>🔥 1M مشاهدة</p>
+
+<button onclick="readManga('ملك السيف')">
+قراءة
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="store" id="store">
+
+<h2>
+🛒 متجر المظاهر
+</h2>
+
+<div class="manga-grid">
+
+<div class="card">
+
+<img src="https://i.imgur.com/JqT2VhP.jpg">
+
+<div class="info">
+
+<h3>VIP Shadow</h3>
+
+<p>1000 نقطة</p>
+
+<button onclick="buyTheme(1000)">
+شراء
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://i.imgur.com/z5q6y6M.jpg">
+
+<div class="info">
+
+<h3>Dragon Aura</h3>
+
+<p>1500 نقطة</p>
+
+<button onclick="buyTheme(1500)">
+شراء
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="profile" id="profile">
+
+<h2>
+👑 البروفايل
+</h2>
+
+<div class="profile-box">
+
+<img src="https://i.imgur.com/6VBx3io.png">
+
+<h3>ملك المانهوا</h3>
+
+<p>
+المستوى: 25 ⚡
+</p>
+
+<p>
+VIP عضو
+</p>
+
+</div>
+
+</section>
+
+<section class="reader" id="reader">
+
+<h2 id="reader-title">
+📖 قارئ المانهوا
+</h2>
+
+<div class="chapter-images">
+
+<img src="https://i.imgur.com/q6Y6Mjp.jpeg">
+<img src="https://i.imgur.com/WKQpK8K.jpeg">
+<img src="https://i.imgur.com/Uw7P9fM.jpeg">
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 امبراطورية المانهوا ☠️
+</p>
+
+</footer>
+
+<div class="notification" id="notification">
+🔥 إشعار
+</div>
+
+<audio id="bgmusic" loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
+</audio>
+
+<script src="app.js"></script>
 
 </body>
 </html>
